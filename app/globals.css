@@ -2,20 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .btn {
+    @apply relative px-8 py-2 rounded-md bg-zinc-100 isolation-auto z-10 border-2 border-sky-950 dark:border-rose-950
+    before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full before:bg-sky-900 dark:before:bg-rose-900 before:-z-10 dark:hover:text-zinc-100  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700;
+  }
 }
