@@ -26,8 +26,8 @@ export const Button = ({
     {
       btn: primary,
       "btn bg-sky-500 border-sky-600": success,
-      "border-yellow-600 bg-yellow-500": warning,
-      "border-red-600 bg-red-500 text-white": danger,
+      "btn border-yellow-600 bg-yellow-500": warning,
+      "btn border-red-600 bg-red-500 text-white": danger,
     }
   );
 
