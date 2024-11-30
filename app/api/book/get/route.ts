@@ -20,7 +20,7 @@ export async function GET() {
         return NextResponse.json(books, { status: 200 });
     } catch (err) {
         return NextResponse.json(
-            { error: 'Failed to fetch books' },
+            { error: `Failed to fetch books ${err}` },
             { status: 500 }
         );
     }
