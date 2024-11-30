@@ -8,7 +8,7 @@ type LinkType = {
 
 export const Navigation = () => {
   const links: LinkType = [
-    { label: "Home", path: "/" },
+    { label: "Home", path: "/home" },
     { label: "Create", path: "/myworks/create" },
     { label: "Library", path: "/library" },
     { label: "Settings", path: "/settings" },
