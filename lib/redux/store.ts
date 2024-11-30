@@ -6,3 +6,7 @@ export const store = configureStore({
         books: booksReducer,
     },
 });
+
+export type RootState = ReturnType<typeof store.getState>;
+
+export default store;
