@@ -9,6 +9,7 @@ type ButtonType = {
   success?: boolean;
   warning?: boolean;
   danger?: boolean;
+  onClick?: () => void;
 };
 
 export const Button = ({
@@ -18,6 +19,7 @@ export const Button = ({
   success,
   warning,
   danger,
+  onClick,
   ...rest
 }: ButtonType) => {
   const classes = classNames(
@@ -33,7 +35,7 @@ export const Button = ({
   );
 
   return (
-    <button {...rest} className={classes}>
+    <button {...rest} onClick={onClick} className={classes}>
       {children}
     </button>
   );

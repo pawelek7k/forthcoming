@@ -5,6 +5,9 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Notiflix from "notiflix";
 import { useState } from "react";
+import { Button } from "../components/Button";
+import { LoginForm } from "../components/login/Login";
+import { SignupForm } from "../components/login/Signup";
 
 export default function Login() {
   const [isLogin, setIsLogin] = useState(true);
@@ -14,7 +17,6 @@ export default function Login() {
     password: "Password1",
   });
   const [isLoading, setIsLoading] = useState(false);
-
   const router = useRouter();
 
   const toggleForm = () => setIsLogin((prev) => !prev);
@@ -80,75 +82,29 @@ export default function Login() {
   };
 
   return (
-    <div className="max-w-md mx-auto p-4 bg-white shadow-md rounded">
-      <h2 className="text-2xl font-bold mb-4">
-        {isLogin ? "Logowanie" : "Rejestracja"}
-      </h2>
-      <form onSubmit={submitHandler}>
-        {!isLogin && (
-          <div className="mb-4">
-            <label
-              htmlFor="username"
-              className="block text-gray-700 font-medium"
-            >
-              Nazwa użytkownika
-            </label>
-            <input
-              type="text"
-              id="username"
-              name="username"
-              value={formData.username}
-              onChange={handleChange}
-              className="w-full border border-gray-300 p-2 rounded mt-1"
-            />
-          </div>
-        )}
-        <div className="mb-4">
-          <label htmlFor="email" className="block text-gray-700 font-medium">
-            Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full border border-gray-300 p-2 rounded mt-1"
-          />
-        </div>
-        <div className="mb-4">
-          <label htmlFor="password" className="block text-gray-700 font-medium">
-            Hasło
-          </label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            className="w-full border border-gray-300 p-2 rounded mt-1"
-          />
-        </div>
-        <button
-          type="submit"
-          disabled={isLoading}
-          className={`w-full ${
-            isLoading ? "bg-gray-400" : "bg-blue-500 hover:bg-blue-600"
-          } text-white p-2 rounded transition`}
-        >
-          {isLoading
-            ? "Przetwarzanie..."
-            : isLogin
-            ? "Zaloguj się"
-            : "Zarejestruj się"}
-        </button>
-      </form>
-      <p className="mt-4 text-center">
-        {isLogin ? "Nie masz konta?" : "Masz już konto?"}{" "}
-        <button onClick={toggleForm} className="text-blue-500 hover:underline">
-          {isLogin ? "Zarejestruj się" : "Zaloguj się"}
-        </button>
-      </p>
+    <div className="h-screen container mx-auto flex flex-col justify-center items-center">
+      {isLogin ? (
+        <LoginForm
+          formData={formData}
+          handleChange={handleChange}
+          submitHandler={submitHandler}
+        />
+      ) : (
+        <SignupForm
+          formData={formData}
+          handleChange={handleChange}
+          submitHandler={submitHandler}
+        />
+      )}
+      <div className="flex items-center gap-4 mt-10">
+        <p className="text-neutral-100">or</p>
+      </div>
+      <div className="mt-10">
+        <Button primary={true} onClick={toggleForm}>
+          {isLogin ? "switch" : "switch"}
+        </Button>
+      </div>
+      {/* {isLoading && <Loader />} */}
     </div>
   );
 }
