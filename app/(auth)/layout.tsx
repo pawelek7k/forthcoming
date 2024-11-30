@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import { Navigation } from "../components/Navigation";
 import "../globals.css";
 import { NextAuthProvider } from "./NextAuthProvider";
 import { ReduxProvider } from "./ReduxProvider";
@@ -25,7 +26,10 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-950 text-zinc-100`}
         >
-          <NextAuthProvider>{children}</NextAuthProvider>
+          <NextAuthProvider>
+            <Navigation />
+            {children}
+          </NextAuthProvider>
         </body>
       </html>
     </ReduxProvider>
