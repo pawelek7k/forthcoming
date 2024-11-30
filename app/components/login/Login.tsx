@@ -2,23 +2,23 @@ import React from "react";
 import { Button } from "../Button";
 import { InputField } from "../InputField";
 
-interface FormData {
-  email: string;
-  username?: string;
-  password: string;
-}
-
-interface LoginFormProps {
-  formData: FormData;
+type LoginFormType = {
+  formData: {
+    email: string;
+    username: string;
+    password: string;
+  };
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   submitHandler: (e: React.FormEvent<HTMLFormElement>) => void;
-}
+  isLoading: boolean;
+};
 
-export const LoginForm: React.FC<LoginFormProps> = ({
+export const LoginForm = ({
   formData,
   handleChange,
   submitHandler,
-}) => {
+  isLoading,
+}: LoginFormType) => {
   return (
     <div className="bg-zinc-950/90 backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-20 shadow-rose-950">
       <h1 className="text-2xl font-semibold text-neutral-100 text-center mb-4">
@@ -50,7 +50,9 @@ export const LoginForm: React.FC<LoginFormProps> = ({
         />
         <ul className="flex flex-col gap-4">
           <li>
-            <Button primary={true}>button</Button>
+            <Button primary={true} isDisabled={isLoading}>
+              button
+            </Button>
           </li>
           {/* <li>
             <GoogleButton />
