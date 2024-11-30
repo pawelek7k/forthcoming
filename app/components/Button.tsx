@@ -25,9 +25,10 @@ export const Button = ({
     "flex items-center px-3 py-1.5 border",
     {
       btn: primary,
-      "btn bg-sky-700 before:bg-sky-900 border-sky-600": success,
-      "btn border-yellow-900 bg-amber-800 before:bg-amber-900": warning,
-      "btn border-red-800 before:bg-red-900 bg-red-800 text-white": danger,
+      "btn bg-sky-700 before:bg-sky-900 border-sky-600 text-sky-100": success,
+      "btn border-yellow-900 bg-amber-800 before:bg-amber-900 text-amber-100":
+        warning,
+      "btn border-red-800 before:bg-red-900 bg-red-800 text-red-100": danger,
     }
   );
 
