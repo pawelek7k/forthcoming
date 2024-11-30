@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "../Button";
 import { InputField } from "../InputField";
 
-interface SignupFormProps {
+type SignupFormType = {
   formData: {
     email: string;
     username: string;
@@ -10,13 +10,15 @@ interface SignupFormProps {
   };
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   submitHandler: (e: React.FormEvent<HTMLFormElement>) => void;
-}
+  isLoading: boolean;
+};
 
-export const SignupForm: React.FC<SignupFormProps> = ({
+export const SignupForm = ({
   formData,
   handleChange,
   submitHandler,
-}) => {
+  isLoading,
+}: SignupFormType) => {
   return (
     <div className="bg-zinc-950/90 backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-10 shadow-rose-950">
       <h1 className="text-2xl  font-semibold text-neutral-100 text-center mb-4">
@@ -56,7 +58,9 @@ export const SignupForm: React.FC<SignupFormProps> = ({
           autoComplete="new-password"
           label="passwordLabel"
         />
-        <Button primary={true}>button</Button>
+        <Button primary={true} isDisabled={isLoading}>
+          button
+        </Button>
         {/* <Socials /> */}
       </form>
     </div>
