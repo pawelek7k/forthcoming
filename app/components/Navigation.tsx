@@ -1,12 +1,12 @@
 import { LinkComponent as Link } from "./Link";
 
-type LinksType = {
+type LinkType = {
   label: string;
   path: string;
 }[];
 
 export const Navigation = () => {
-  const links: LinksType = [
+  const links: LinkType = [
     { label: "Home", path: "/" },
     { label: "Create", path: "/myworks/create" },
     { label: "Library", path: "/library" },
