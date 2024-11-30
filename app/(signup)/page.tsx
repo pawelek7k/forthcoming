@@ -88,12 +88,14 @@ export default function Login() {
           formData={formData}
           handleChange={handleChange}
           submitHandler={submitHandler}
+          isLoading={isLoading}
         />
       ) : (
         <SignupForm
           formData={formData}
           handleChange={handleChange}
           submitHandler={submitHandler}
+          isLoading={isLoading}
         />
       )}
       <div className="flex items-center gap-4 mt-10">
