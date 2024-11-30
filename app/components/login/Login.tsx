@@ -50,7 +50,7 @@ export const LoginForm = ({
         />
         <ul className="flex flex-col gap-4">
           <li>
-            <Button primary={true} isDisabled={isLoading}>
+            <Button primary={true} isdisabled={`${isLoading}`}>
               button
             </Button>
           </li>
