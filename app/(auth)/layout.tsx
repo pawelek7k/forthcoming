@@ -22,7 +22,7 @@ export default function RootLayout({
     <ReduxProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-950`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-950 text-zinc-100`}
         >
           {children}
         </body>
