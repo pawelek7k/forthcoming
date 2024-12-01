@@ -28,7 +28,7 @@ export default function RootLayout({
         >
           <NextAuthProvider>
             <Navigation />
-            {children}
+            <main className="pt-20 p-6">{children}</main>
           </NextAuthProvider>
         </body>
       </html>
