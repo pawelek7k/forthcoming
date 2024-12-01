@@ -14,7 +14,10 @@ export const BookItem = ({ book }: { book: Book }) => {
           <Heading as="h3" className="font-semibold text-xl">
             {book.title}
           </Heading>
-          {book.forAdult ? "yes" : "no"}
+          <div className="flex gap-2 font-semibold items-center rounded-full bg-zinc-100 text-zinc-950 px-4 w-max">
+            <Heading as="h4">For adult:</Heading>
+            <span className="text-sm">{book.forAdult ? "YES" : "NO"}</span>
+          </div>
           <p className="text-sm md:text-base">{book.description}</p>
         </div>
       </div>
