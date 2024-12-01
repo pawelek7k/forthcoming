@@ -24,7 +24,7 @@ export default function RootLayout({
     <ReduxProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-950 text-zinc-100`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-dark-primary-bg text-zinc-100`}
         >
           <NextAuthProvider>
             <Navigation />
