@@ -6,7 +6,7 @@ export const BookItem = ({ book }: { book: Book }) => {
   return (
     <li
       key={book._id.toString()}
-      className="cursor-pointer flex gap-2 p-2 transition ease-in-out rounded-lg hover:shadow-sm flex-col sm:flex-row bg-zinc-900/50 hover:bg-zinc-800/50"
+      className="cursor-pointer flex gap-2 p-2 transition ease-in-out rounded-lg hover:shadow-sm flex-col sm:flex-row hover:bg-zinc-950/30"
     >
       <Cover title={book.title} cover={book.cover} />
       <div className="flex flex-col sm:flex-row gap-2">
