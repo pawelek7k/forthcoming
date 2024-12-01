@@ -1,5 +1,6 @@
 "use client";
 
+import { BookItem } from "@/app/components/BookItem";
 import { fetchBooks } from "@/lib/redux/slices/booksSlice";
 import { RootState } from "@/lib/redux/store";
 import { Book } from "@/types/book";
@@ -38,7 +39,9 @@ export default function Home() {
       {status === "failed" && <p>{error}</p>}
       <ul>
         {books.map((book: Book) => (
-          <li key={book._id.toString()}>{book.title}</li>
+          <>
+            <BookItem book={book} />
+          </>
         ))}
       </ul>
     </div>
