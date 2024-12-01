@@ -37,7 +37,7 @@ export default function Home() {
       <h1>Books</h1>
       {status === "loading" && <p>Loading books...</p>}
       {status === "failed" && <p>{error}</p>}
-      <ul>
+      <ul className="flex flex-col gap-4">
         {books.map((book: Book) => (
           <>
             <BookItem book={book} />
