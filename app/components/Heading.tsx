@@ -9,12 +9,12 @@ type HeadingType = {
   className?: ClassNameType;
 } & React.HTMLAttributes<HTMLHeadingElement>;
 
-const Heading: React.FC<HeadingType> = ({
+export const Heading = ({
   as = "h1",
   children,
   className,
   ...rest
-}) => {
+}: HeadingType) => {
   const Component = as;
   return (
     <Component className={classNames(className)} {...rest}>
@@ -22,5 +22,3 @@ const Heading: React.FC<HeadingType> = ({
     </Component>
   );
 };
-
-export default Heading;
