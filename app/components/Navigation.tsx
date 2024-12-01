@@ -15,17 +15,20 @@ export const Navigation = () => {
   ];
 
   return (
-    <header className="flex justify-around p-4 w-full fixed z-40 backdrop-blur-md rounded-b-lg border-b top-0 items-center dark:border-b-rose-950 shadow-lg">
+    <header className="flex justify-around w-full fixed z-40 backdrop-blur-md rounded-b-lg border-b top-0 items-center dark:border-b-rose-950 shadow-lg">
       <Logo />
-      <nav className="flex items-center">
-        <ul className="flex gap-4">
-          {links.map(({ label, path }) => (
-            <li key={label}>
-              <Link to={path}>{label}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <div className="bg-zinc-100/90 rounded-l-full text-zinc-900 p-4">
+        <nav className="flex items-center">
+          <ul className="flex gap-4">
+            {links.map(({ label, path }) => (
+              <li key={label}>
+                <Link to={path}>{label}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        {/* hamburger */}
+      </div>
     </header>
   );
 };
