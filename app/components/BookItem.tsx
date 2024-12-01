@@ -11,6 +11,7 @@ export const BookItem = ({ book }: { book: Book }) => {
       <div className="flex flex-col sm:flex-row gap-2">
         <div className="p-2 flex flex-col gap-2">
           <p className="text-sm md:text-base">{book.title}</p>
+          {book.forAdult ? "yes" : "no"}
           <p className="text-sm md:text-base">{book.description}</p>
         </div>
       </div>
