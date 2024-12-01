@@ -28,7 +28,7 @@ export default function RootLayout({
         >
           <NextAuthProvider>
             <Navigation />
-            <main className="pt-20 p-6">{children}</main>
+            <main className="pt-20 p-6 min-h-screen">{children}</main>
           </NextAuthProvider>
         </body>
       </html>
