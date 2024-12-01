@@ -8,12 +8,8 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
       backgroundImage: {
-        "dark-primary-bg": "radial-gradient(42% 53% at 79% 20%, #4C0519FF 1%, #09090BD6 100%),radial-gradient(75% 75% at 42% 53%, #09090B38 1%, #4C0519FF 100%),radial-gradient(21% 37% at 30% 44%, #4c0519 2%, #4c0519 100%),radial-gradient(75% 75% at 50% 50%, #4c0519 0%, #4c0519 99%),radial-gradient(33% 32% at 45% 54%, #4c0519 2%, #4C051991 100%),radial-gradient(18% 28% at 35% 87%, #4c0519 7%, #09090B8A 100%),radial-gradient(31% 43% at 7% 98%, #4c0519 24%, #09090b 100%);",
+        "dark-primary-bg": " radial-gradient(70% 53% at 36% 76%, #4c0519 0%, #073AFF00 100%),radial-gradient(42% 53% at 15% 94%, #18181b 7%, #073AFF00 100%),radial-gradient(42% 53% at 34% 72%, #18181b 7%, #073AFF00 100%),radial-gradient(18% 28% at 35% 87%, #18181b 7%, #073AFF00 100%),radial-gradient(31% 43% at 7% 98%, #18181b 24%, #073AFF00 100%),radial-gradient(21% 37% at 72% 23%, #09090b 24%, #073AFF00 100%),radial-gradient(35% 56% at 91% 74%, #09090b 9%, #073AFF00 100%),radial-gradient(74% 86% at 67% 38%, #09090b 24%, #073AFF00 100%),linear-gradient(125deg, #09090b 1%, #09090b 100%);",
       },
     },
   },
