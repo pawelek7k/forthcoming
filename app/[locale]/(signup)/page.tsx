@@ -2,12 +2,12 @@
 
 import { createUser } from "@/lib/signup/createUser";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
 import Notiflix from "notiflix";
 import { useState } from "react";
-import { Button } from "../components/Button";
-import { LoginForm } from "../components/login/Login";
-import { SignupForm } from "../components/login/Signup";
+import { Button } from "../../components/Button";
+import { LoginForm } from "../../components/login/Login";
+import { SignupForm } from "../../components/login/Signup";
+import { useRouter } from "@/navigation";
 
 export default function Login() {
   const [isLogin, setIsLogin] = useState(true);
