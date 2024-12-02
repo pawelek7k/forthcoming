@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import React from "react";
 import { Button } from "../Button";
 import { InputField } from "../InputField";
+import { Socials } from "./Socials";
 
 type SignupFormType = {
   formData: {
@@ -63,7 +64,7 @@ export const SignupForm = ({
         <Button primary={true} isdisabled={`${isLoading}`}>
           {t("button")}
         </Button>
-        {/* <Socials /> */}
+        <Socials />
       </form>
     </div>
   );

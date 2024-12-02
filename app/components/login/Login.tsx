@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 import React from "react";
 import { Button } from "../Button";
 import { InputField } from "../InputField";
+import { Socials } from "./Socials";
 
 type LoginFormType = {
   formData: {
@@ -60,7 +61,7 @@ export const LoginForm = ({
             <GoogleButton />
           </li> */}
         </ul>
-        {/* <Socials /> */}
+        <Socials />
       </form>
     </div>
   );
