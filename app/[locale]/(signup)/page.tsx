@@ -8,6 +8,7 @@ import { Button } from "../../components/Button";
 import { LoginForm } from "../../components/login/Login";
 import { SignupForm } from "../../components/login/Signup";
 import { useRouter } from "@/navigation";
+import { useTranslations } from "next-intl";
 
 export default function Login() {
   const [isLogin, setIsLogin] = useState(true);
@@ -18,6 +19,8 @@ export default function Login() {
   });
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+  const loginT = useTranslations("login");
+  const signupT = useTranslations("signup");
 
   const toggleForm = () => setIsLogin((prev) => !prev);
 
@@ -103,7 +106,7 @@ export default function Login() {
       </div>
       <div className="mt-10">
         <Button primary={true} onClick={toggleForm}>
-          {isLogin ? "switch" : "switch"}
+          {isLogin ? loginT("switch") : signupT("switch")}
         </Button>
       </div>
       {/* {isLoading && <Loader />} */}
