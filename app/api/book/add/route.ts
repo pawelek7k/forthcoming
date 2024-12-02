@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
 
     const data = {
         ...value,
-        author: session.user?.email || 'Unknown',
+        author: session.user?.name || 'Unknown',
     };
 
     try {
