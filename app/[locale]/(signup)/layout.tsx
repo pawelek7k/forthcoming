@@ -1,3 +1,5 @@
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 import localFont from "next/font/local";
 import "../../globals.css";
 
@@ -12,17 +14,22 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params: { locale },
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string };
 }>) {
+  const messages = await getMessages();
   return (
-    <html lang="en">
+    <html lang={locale || "en"}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-950`}
       >
-        {children}
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );

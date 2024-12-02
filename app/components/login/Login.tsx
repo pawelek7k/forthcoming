@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "../Button";
 import { InputField } from "../InputField";
+import { useTranslations } from "next-intl";
 
 type LoginFormType = {
   formData: {
@@ -19,10 +20,11 @@ export const LoginForm = ({
   submitHandler,
   isLoading,
 }: LoginFormType) => {
+  const t = useTranslations("login");
   return (
     <div className="bg-zinc-950/90 backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-20 shadow-rose-950">
       <h1 className="text-2xl font-semibold text-neutral-100 text-center mb-4">
-        heading
+        {t("heading")}
       </h1>
       <p className="text-zinc-950 shadow-zinc-100 bg-zinc-100 p-1 rounded-full shadow-lg text-center mb-4 font-semibold text-sm uppercase">
         paragraph
