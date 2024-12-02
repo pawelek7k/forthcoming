@@ -5,9 +5,15 @@ import { fetchBooks } from "@/lib/redux/slices/booksSlice";
 import { RootState } from "@/lib/redux/store";
 import { Book } from "@/types/book";
 import { useSession } from "next-auth/react";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+
+const Welcome = dynamic(() => import("@/app/components/Welcome"), {
+  ssr: false,
+  loading: () => null,
+});
 
 export default function Home() {
   const { data: session, status: sessionStatus } = useSession();
@@ -32,9 +38,12 @@ export default function Home() {
 
   if (sessionStatus === "loading") return <p>Loading session...</p>;
 
+  const email = session?.user?.email ?? "unknown@example.com";
+  const username = session?.user?.name ?? email.split("@")[0];
+
   return (
     <div>
-      <h1>Books</h1>
+      <Welcome email={email} username={username} />
       {status === "loading" && <p>Loading books...</p>}
       {status === "failed" && <p>{error}</p>}
       <ul className="flex flex-col gap-4">
