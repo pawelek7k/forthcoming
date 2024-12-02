@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import React from "react";
 import { Button } from "../Button";
 import { InputField } from "../InputField";
@@ -19,13 +20,14 @@ export const SignupForm = ({
   submitHandler,
   isLoading,
 }: SignupFormType) => {
+  const t = useTranslations("signup");
   return (
     <div className="bg-zinc-950/90 backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-10 shadow-rose-950">
       <h1 className="text-2xl  font-semibold text-neutral-100 text-center mb-4">
-        heading
+        {t("heading")}
       </h1>
       <p className="text-zinc-950 shadow-zinc-100 bg-zinc-100 p-1 rounded-full shadow-lg text-center mb-4 font-semibold text-sm uppercase">
-        paragraph
+        {t("paragraph")}
       </p>
       <form onSubmit={submitHandler}>
         <InputField
@@ -59,7 +61,7 @@ export const SignupForm = ({
           label="passwordLabel"
         />
         <Button primary={true} isdisabled={`${isLoading}`}>
-          button
+          {t("button")}
         </Button>
         {/* <Socials /> */}
       </form>

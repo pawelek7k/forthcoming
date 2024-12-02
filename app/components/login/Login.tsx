@@ -1,7 +1,7 @@
+import { useTranslations } from "next-intl";
 import React from "react";
 import { Button } from "../Button";
 import { InputField } from "../InputField";
-import { useTranslations } from "next-intl";
 
 type LoginFormType = {
   formData: {
@@ -27,7 +27,7 @@ export const LoginForm = ({
         {t("heading")}
       </h1>
       <p className="text-zinc-950 shadow-zinc-100 bg-zinc-100 p-1 rounded-full shadow-lg text-center mb-4 font-semibold text-sm uppercase">
-        paragraph
+        {t("paragraph")}
       </p>
       <form onSubmit={submitHandler}>
         <InputField
@@ -53,7 +53,7 @@ export const LoginForm = ({
         <ul className="flex flex-col gap-4">
           <li>
             <Button primary={true} isdisabled={`${isLoading}`}>
-              button
+              {t("button")}
             </Button>
           </li>
           {/* <li>
