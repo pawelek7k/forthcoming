@@ -61,7 +61,7 @@ export const SignupForm = ({
           autoComplete="new-password"
           label={t("passwordLabel")}
         />
-        <Button primary={true} isdisabled={`${isLoading}`}>
+        <Button primary={true} isDisabled={isLoading}>
           {t("button")}
         </Button>
         <Socials />

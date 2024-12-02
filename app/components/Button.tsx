@@ -9,6 +9,7 @@ type ButtonType = {
   success?: boolean;
   warning?: boolean;
   danger?: boolean;
+  isDisabled?: boolean;
   onClick?: () => void;
 };
 
@@ -20,6 +21,7 @@ export const Button = ({
   warning,
   danger,
   onClick,
+  isDisabled,
   ...rest
 }: ButtonType) => {
   const classes = classNames(className, "flex items-center px-3 py-1.5", {
@@ -28,10 +30,16 @@ export const Button = ({
     "btn border-yellow-900 bg-amber-800 before:bg-amber-900 text-amber-100":
       warning,
     "btn border-red-800 before:bg-red-900 bg-red-800 text-red-100": danger,
+    "opacity-50 cursor-not-allowed": isDisabled,
   });
 
   return (
-    <button {...rest} onClick={onClick} className={classes}>
+    <button
+      {...rest}
+      onClick={onClick}
+      className={classes}
+      disabled={isDisabled}
+    >
       {children}
     </button>
   );
