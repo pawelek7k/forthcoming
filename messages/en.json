@@ -1,0 +1,59 @@
+{
+  "login": {
+    "heading": "Welcome back!",
+    "paragraph": "Please enter your account details!",
+    "button": "Log in!",
+    "switch": "Switch to registration",
+    "emailPlaceholder": "Enter your e-mail",
+    "emailLabel": "E-mail",
+    "passwordPlaceholder": "Enter your password",
+    "passwordLabel": "Password",
+    "googleButton": "Sign in with Google"
+  },
+  "signup": {
+    "heading": "Join us!",
+    "paragraph": "Create your account now.",
+    "button": "Sign up!",
+    "switch": "Switch to login",
+    "emailPlaceholder": "Enter your e-mail",
+    "emailLabel": "E-mail",
+    "passwordPlaceholder": "Enter your password",
+    "passwordLabel": "Password",
+    "usernamePlaceholder": "Enter your username",
+    "usernameLabel": "Username"
+  },
+  "global": {
+    "empty": "Ooops... Empty here.",
+    "langSwitch": "Language of the book:",
+    "adultChecker": "For adult",
+    "grid": "Grid",
+    "list": "List",
+    "title": "Title",
+    "description": "Description",
+    "genre": "Genre",
+    "tags": "Tags",
+    "yes": "Yes",
+    "no": "No",
+    "addToLibrary": "Add to library",
+    "startReading": "Start reading"
+  },
+  "navigation": {
+    "create": "Create",
+    "library": "Library",
+    "logout": "Log out"
+  },
+  "filters": {
+    "heading": "Filters",
+    "search": "Search",
+    "applyFilters": "Apply Filters",
+    "clearFilters": "Clear Filters"
+  },
+  "headings": {
+    "home": {
+      "welcome": "Welcome",
+      "mainHeading": "Discover the books!"
+    },
+    "create": "Create your book!",
+    "library": "Your library!"
+  }
+}

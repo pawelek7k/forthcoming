@@ -1,0 +1,59 @@
+{
+  "login": {
+    "heading": "Witaj ponownie!",
+    "paragraph": "Wprowadź dane swojego konta!",
+    "button": "Zaloguj się!",
+    "switch": "Przełącz na rejestrację",
+    "emailPlaceholder": "Wprowadź swój e-mail",
+    "emailLabel": "E-mail",
+    "passwordPlaceholder": "Wprowadź swoje hasło",
+    "passwordLabel": "Hasło",
+    "googleButton": "Zaloguj się z użyciem Google"
+  },
+  "signup": {
+    "heading": "Dołącz do nas!",
+    "paragraph": "Załóż swoje konto już teraz.",
+    "button": "Zarejestruj się!",
+    "switch": "Przełącz na logowanie",
+    "emailPlaceholder": "Wprowadź swój e-mail",
+    "emailLabel": "E-mail",
+    "passwordPlaceholder": "Wprowadź swoje hasło",
+    "passwordLabel": "Hasło",
+    "usernamePlaceholder": "Wprowadź nazwe użytkownika",
+    "usernameLabel": "Nazwa użytkownika"
+  },
+  "global": {
+    "empty": "Ooops... Pusto tu.",
+    "langSwitch": "Język książki:",
+    "adultChecker": "Dla dorosłych",
+    "grid": "Siatka",
+    "list": "Lista",
+    "title": "Tytuł",
+    "description": "Opis",
+    "genre": "Gatunek",
+    "tags": "Tagi",
+    "yes": "Tak",
+    "no": "Nie",
+    "addToLibrary": "Dodaj do biblioteki",
+    "startReading": "Zacznij czytać"
+  },
+  "navigation": {
+    "create": "Stwórz",
+    "library": "Biblioteka",
+    "logout": "Wyloguj"
+  },
+  "filters": {
+    "heading": "Filtry",
+    "search": "Wyszukaj",
+    "applyFilters": "Zatwierdź filtry",
+    "clearFilters": "Wyczyść filtry"
+  },
+  "headings": {
+    "home": {
+      "welcome": "Witaj",
+      "mainHeading": "Odkrywaj książki!"
+    },
+    "create": "Stwórz swoją książkę!",
+    "library": "Twoja biblioteka!"
+  }
+}
