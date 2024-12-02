@@ -62,7 +62,11 @@ export default function Home() {
         {status === "failed" && <p>{error}</p>}
         <ul className="flex flex-col gap-4">
           {books.map((book: Book) => (
-            <BookItem key={book._id.toString()} book={book} />
+            <BookItem
+              key={book._id.toString()}
+              book={book}
+              onBookClick={handleBookClick}
+            />
           ))}
         </ul>
       </div>
