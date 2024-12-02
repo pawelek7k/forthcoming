@@ -9,7 +9,7 @@ type UserType = {
 const Welcome: React.FC<UserType> = ({ email, username }) => {
   const t = useTranslations("headings");
   return (
-    <div className="bg-black rounded-xl p-10 bg-home-img bg-top dark:bg-center dark:bg-dark-home-img bg-no-repeat bg-cover ">
+    <div className="bg-black rounded-xl p-10 my-8 bg-home-img bg-top dark:bg-center dark:bg-dark-home-img bg-no-repeat bg-cover ">
       <h2 className="text-xl text-neutral-100">
         {t("home.welcome")}, {username || email.split("@")[0]}!
       </h2>
