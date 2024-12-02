@@ -4,7 +4,10 @@ import { Heading } from "./Heading";
 
 export const BookItem = ({ book }: { book: Book }) => {
   return (
-    <>
+    <li
+      key={book._id.toString()}
+      className="cursor-pointer flex gap-2 p-2 transition ease-in-out rounded-lg hover:shadow-sm flex-col sm:flex-row hover:bg-zinc-950/30"
+    >
       <Cover title={book.title} cover={book.cover} />
       <div className="flex flex-col sm:flex-row gap-2">
         <div className="p-2 flex flex-col gap-2">
@@ -18,6 +21,6 @@ export const BookItem = ({ book }: { book: Book }) => {
           <p className="text-sm md:text-base">{book.description}</p>
         </div>
       </div>
-    </>
+    </li>
   );
 };

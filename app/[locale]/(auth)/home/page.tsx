@@ -39,14 +39,7 @@ export default function Home() {
       {status === "failed" && <p>{error}</p>}
       <ul className="flex flex-col gap-4">
         {books.map((book: Book) => (
-          <>
-            <li
-              key={book._id.toString()}
-              className="cursor-pointer flex gap-2 p-2 transition ease-in-out rounded-lg hover:shadow-sm flex-col sm:flex-row hover:bg-zinc-950/30"
-            >
-              <BookItem book={book} />
-            </li>
-          </>
+          <BookItem key={book._id.toString()} book={book} />
         ))}
       </ul>
     </div>
