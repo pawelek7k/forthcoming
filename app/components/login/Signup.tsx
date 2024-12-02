@@ -26,7 +26,7 @@ export const SignupForm = ({
       <h1 className="text-2xl  font-semibold text-neutral-100 text-center mb-4">
         {t("heading")}
       </h1>
-      <p className="text-zinc-950 shadow-zinc-100 bg-zinc-100 p-1 rounded-full shadow-lg text-center mb-4 font-semibold text-sm uppercase">
+      <p className="text-zinc-950 shadow-zinc-100 bg-zinc-100 p-1 rounded-full shadow-lg text-center mb-6 font-semibold text-sm uppercase">
         {t("paragraph")}
       </p>
       <form onSubmit={submitHandler}>
