@@ -36,9 +36,9 @@ export const LoginForm = ({
           type="email"
           value={formData.email}
           onChange={handleChange}
-          placeholder="emailPlaceholder"
+          placeholder={t("emailPlaceholder")}
           autoComplete="email"
-          label="emailLabel"
+          label={t("emailLabel")}
         />
         <InputField
           id="password"
@@ -46,9 +46,9 @@ export const LoginForm = ({
           type="password"
           value={formData.password}
           onChange={handleChange}
-          placeholder="passwordPlaceholder"
+          placeholder={t("passwordPlaceholder")}
           autoComplete="current-password"
-          label="passwordLabel"
+          label={t("passwordLabel")}
         />
         <ul className="flex flex-col gap-4">
           <li>

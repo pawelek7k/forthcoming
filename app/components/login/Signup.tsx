@@ -36,9 +36,9 @@ export const SignupForm = ({
           type="email"
           value={formData.email}
           onChange={handleChange}
-          placeholder="emailPlaceholder"
+          placeholder={t("emailPlaceholder")}
           autoComplete="email"
-          label="emailLabel"
+          label={t("emailLabel")}
         />
         <InputField
           id="username"
@@ -46,9 +46,9 @@ export const SignupForm = ({
           type="text"
           value={formData.username}
           onChange={handleChange}
-          placeholder="usernamePlaceholder"
+          placeholder={t("usernamePlaceholder")}
           autoComplete="username"
-          label="usernameLabel"
+          label={t("usernameLabel")}
         />
         <InputField
           id="password"
@@ -56,9 +56,9 @@ export const SignupForm = ({
           type="password"
           value={formData.password}
           onChange={handleChange}
-          placeholder="passwordPlaceholder"
+          placeholder={t("passwordPlaceholder")}
           autoComplete="new-password"
-          label="passwordLabel"
+          label={t("passwordLabel")}
         />
         <Button primary={true} isdisabled={`${isLoading}`}>
           {t("button")}
