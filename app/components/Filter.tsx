@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Heading } from "./Heading";
+import { InputField } from "./InputField";
 
 export const Filter = () => {
   return (
@@ -13,6 +14,12 @@ export const Filter = () => {
       <Heading as="h2" className="text-2xl font-semibold text-zinc-100 mb-4">
         Filter
       </Heading>
+      <InputField
+        id={"filter-title"}
+        onChange={undefined}
+        placeholder={"Enter title"}
+        label={"Enter title"}
+      />
     </motion.div>
   );
 };
