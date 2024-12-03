@@ -1,6 +1,7 @@
 import { NextAuthOptions } from "next-auth";
-import { connectToDatabase } from "../mongoDB/connect";
 import CredentialsProvider from 'next-auth/providers/credentials';
+import GoogleProvider from 'next-auth/providers/google';
+import { connectToDatabase } from "../mongoDB/connect";
 import { verifyPassword } from "../signup/hashPasswd";
 
 export const authOptions: NextAuthOptions = {
@@ -46,10 +47,10 @@ export const authOptions: NextAuthOptions = {
                 }
             }
         }),
-        // GoogleProvider({
-        //     clientId: process.env.GOOGLE_CLIENT_ID!,
-        //     clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-        // }),
+        GoogleProvider({
+            clientId: process.env.GOOGLE_CLIENT_ID!,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+        }),
     ],
     pages: {
         signIn: '/',
