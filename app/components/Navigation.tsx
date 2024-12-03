@@ -4,6 +4,7 @@ import { Sling as Hamburger } from "hamburger-react";
 import { useState } from "react";
 import { LinkComponent as Link } from "./Link";
 import { Logo } from "./Logo";
+import { Filter } from "./Filter";
 
 type LinkType = {
   label: string;
@@ -43,6 +44,7 @@ export const Navigation = () => {
           </div>
         </div>
       </header>
+      {isOpen && <Filter />}
     </>
   );
 };
