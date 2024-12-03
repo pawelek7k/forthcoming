@@ -1,6 +1,7 @@
 import { Book } from "@/types/book";
 import { useTranslations } from "next-intl";
 import { useEffect } from "react";
+import { Heading } from "./Heading";
 
 type ModalType = {
   isOpen: boolean;
@@ -31,7 +32,9 @@ export const DetailsBookModal = ({ isOpen, onClose, book }: ModalType) => {
   return (
     <>
       <div className="fixed inset-0 flex items-center justify-center bg-black opacity-50 z-999">
-        <div className="bg-zinc-900 backdrop-blur-md p-6 rounded-tl-3xl rounded-br-3xl justify-center w-full md:w-[50rem]"></div>
+        <div className="bg-zinc-900 backdrop-blur-md p-6 rounded-tl-3xl rounded-br-3xl justify-center w-full md:w-[50rem]">
+          <Heading as="h2">{book.title}</Heading>
+        </div>
       </div>
     </>
   );
