@@ -59,25 +59,29 @@ export const DetailsBookModal = ({ isOpen, onClose, book }: ModalType) => {
               </div>
             </div>
             <div className="w-full flex flex-col p-0 justify-center md:py-6 gap-2">
+              <Heading as="h5" className="font-semibold">
+                {t("description")}:
+              </Heading>
               <p className="text-gray-700 dark:text-neutral-100 hidden md:block">
-                <Heading as="h5" className="font-semibold">
-                  {t("description")}:
-                </Heading>
                 {book.description}
               </p>
               <div className="flex justify-between">
-                <p className="text-gray-700 dark:text-neutral-100 flex">
+                <div className="flex gap-2">
                   <Heading as="h5" className="font-semibold">
                     {t("genre")}:
                   </Heading>
-                  {book.genre}
-                </p>
-                <p className="text-gray-700 dark:text-neutral-100 flex">
+                  <p className="text-gray-700 dark:text-neutral-100 flex">
+                    {book.genre}
+                  </p>
+                </div>
+                <div className="flex gap-2">
                   <Heading as="h5" className="font-semibold">
                     {t("adultChecker")}:{" "}
                   </Heading>
-                  {book.forAdult ? t("yes") : t("no")}
-                </p>
+                  <p className="text-gray-700 dark:text-neutral-100 flex">
+                    {book.forAdult ? t("yes") : t("no")}
+                  </p>
+                </div>
               </div>
               <Heading as="h5" className="font-semibold">
                 {t("tags")}:
