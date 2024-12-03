@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Button } from "./Button";
 import { Heading } from "./Heading";
 import { InputField } from "./InputField";
 
@@ -20,6 +21,7 @@ export const Filter = () => {
         placeholder={"Enter title"}
         label={"Enter title"}
       />
+      <Button primary={true}>Submit</Button>
     </motion.div>
   );
 };
