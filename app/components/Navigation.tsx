@@ -51,7 +51,11 @@ export const Navigation = () => {
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
+            transition={{
+              type: "spring",
+              stiffness: 120,
+              damping: 20,
+            }}
             className="bottom-0 max-w-sm shadow-lg z-30 h-screen w-3/12 bg-zinc-950 fixed top-0 right-0"
           >
             <Filter />
