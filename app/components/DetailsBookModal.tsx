@@ -35,7 +35,7 @@ export const DetailsBookModal = ({ isOpen, onClose, book }: ModalType) => {
   return (
     <>
       <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 dark:bg-zinc-900/50">
-        <div className="bg-white/70 backdrop-blur-md p-6 rounded-md justify-center w-full md:w-[50rem] dark:bg-black/70">
+        <div className="bg-white/70 backdrop-blur-md md:p-6 rounded-md justify-center w-full md:w-[50rem] dark:bg-black/70">
           <button
             onClick={onClose}
             className="absolute top-6 right-6 text-lg font-bold"
@@ -44,7 +44,9 @@ export const DetailsBookModal = ({ isOpen, onClose, book }: ModalType) => {
           </button>
           <div className="flex gap-4 flex-col sm:flex-row p-6">
             <div className="flex flex-col gap-4 md:gap-6 px-6 text-nowrap ">
-              <Heading as="h2">{book.title}</Heading>
+              <Heading as="h2" className="font-semibold text-2xl">
+                {book.title}
+              </Heading>
               <div className="relative overflow-hidden rounded-md sm:w-48 sm:h-80 w-full h-64 md:self-center">
                 <Image
                   src={book.cover}
@@ -58,17 +60,28 @@ export const DetailsBookModal = ({ isOpen, onClose, book }: ModalType) => {
             </div>
             <div className="w-full flex flex-col p-0 justify-center md:py-6 gap-2">
               <p className="text-gray-700 dark:text-neutral-100 hidden md:block">
-                {t("description")}:{book.description}
+                <Heading as="h5" className="font-semibold">
+                  {t("description")}:
+                </Heading>
+                {book.description}
               </p>
               <div className="flex justify-between">
-                <p className="text-gray-700 dark:text-neutral-100">
-                  {t("genre")}:{book.genre}
+                <p className="text-gray-700 dark:text-neutral-100 flex">
+                  <Heading as="h5" className="font-semibold">
+                    {t("genre")}:
+                  </Heading>
+                  {book.genre}
                 </p>
-                <p className="text-gray-700 dark:text-neutral-100">
-                  {t("adultChecker")}:{book.forAdult ? t("yes") : t("no")}
+                <p className="text-gray-700 dark:text-neutral-100 flex">
+                  <Heading as="h5" className="font-semibold">
+                    {t("adultChecker")}:{" "}
+                  </Heading>
+                  {book.forAdult ? t("yes") : t("no")}
                 </p>
               </div>
-              <span>{t("tags")}</span>
+              <Heading as="h5" className="font-semibold">
+                {t("tags")}:
+              </Heading>
               <ul className="flex flex-wrap gap-2 mt-2">
                 {book.tags.map((tag, index) => (
                   <li key={index}>
