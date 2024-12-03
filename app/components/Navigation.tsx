@@ -5,6 +5,7 @@ import { useState } from "react";
 import { LinkComponent as Link } from "./Link";
 import { Logo } from "./Logo";
 import { Filter } from "./Filter";
+import { AnimatePresence, motion } from "framer-motion";
 
 type LinkType = {
   label: string;
@@ -44,7 +45,19 @@ export const Navigation = () => {
           </div>
         </div>
       </header>
-      {isOpen && <Filter />}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="bottom-0 max-w-sm shadow-lg z-30 h-screen w-3/12 bg-zinc-950 fixed top-0 right-0"
+          >
+            <Filter />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
