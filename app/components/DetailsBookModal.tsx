@@ -1,9 +1,10 @@
 import { Book } from "@/types/book";
 import { useTranslations } from "next-intl";
-import { useEffect } from "react";
-import { Heading } from "./Heading";
 import Image from "next/legacy/image";
+import { useEffect } from "react";
 import { IoCloseOutline } from "react-icons/io5";
+import { Heading } from "./Heading";
+import { Tag } from "./Tag";
 
 type ModalType = {
   isOpen: boolean;
@@ -67,19 +68,14 @@ export const DetailsBookModal = ({ isOpen, onClose, book }: ModalType) => {
                   {t("adultChecker")}:{book.forAdult ? t("yes") : t("no")}
                 </p>
               </div>
-              <p>
-                {t("tags")}
-                <span className="flex flex-wrap gap-2 mt-2">
-                  {book.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="dark:bg-rose-950/30 bg-sky-950/30 shadow-lg rounded-full py-1 px-4 min-w-12"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </span>
-              </p>
+              <span>{t("tags")}</span>
+              <ul className="flex flex-wrap gap-2 mt-2">
+                {book.tags.map((tag, index) => (
+                  <li key={index}>
+                    <Tag>{tag}</Tag>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
