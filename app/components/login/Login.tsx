@@ -3,6 +3,7 @@ import React from "react";
 import { Button } from "../Button";
 import { InputField } from "../InputField";
 import { Socials } from "./Socials";
+import { GoogleBtn } from "../GoogleBtn";
 
 type LoginFormType = {
   formData: {
@@ -57,9 +58,9 @@ export const LoginForm = ({
               {t("button")}
             </Button>
           </li>
-          {/* <li>
-            <GoogleButton />
-          </li> */}
+          <li>
+            <GoogleBtn />
+          </li>
         </ul>
         <Socials />
       </form>
