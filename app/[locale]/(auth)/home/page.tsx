@@ -5,10 +5,10 @@ import { DetailsBookModal as Modal } from "@/app/components/DetailsBookModal";
 import { Loader } from "@/app/components/Loader";
 import { fetchBooks } from "@/lib/redux/slices/booksSlice";
 import { RootState } from "@/lib/redux/store";
+import { useRouter } from "@/navigation";
 import { Book } from "@/types/book";
 import { useSession } from "next-auth/react";
 import dynamic from "next/dynamic";
-import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 

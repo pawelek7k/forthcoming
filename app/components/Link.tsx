@@ -1,7 +1,7 @@
+import { Link } from "@/navigation";
 import type { ChildrenType } from "@/types/children";
 import type { ClassNameType } from "@/types/className";
 import classNames from "classnames";
-import Link from "next/link";
 
 type LinkType = {
   to: string;
