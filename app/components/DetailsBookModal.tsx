@@ -4,6 +4,7 @@ import Image from "next/legacy/image";
 import { useEffect } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { Heading } from "./Heading";
+import { Buttons } from "./ModalBtns";
 import { Tag } from "./Tag";
 
 type ModalType = {
@@ -95,6 +96,7 @@ export const DetailsBookModal = ({ isOpen, onClose, book }: ModalType) => {
               </ul>
             </div>
           </div>
+          <Buttons book={book} />
         </div>
       </div>
     </>
