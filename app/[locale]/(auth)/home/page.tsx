@@ -2,6 +2,7 @@
 
 import { BookItem } from "@/app/components/BookItem";
 import { DetailsBookModal as Modal } from "@/app/components/DetailsBookModal";
+import { Loader } from "@/app/components/Loader";
 import { fetchBooks } from "@/lib/redux/slices/booksSlice";
 import { RootState } from "@/lib/redux/store";
 import { Book } from "@/types/book";
@@ -13,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Welcome = dynamic(() => import("@/app/components/Welcome"), {
   ssr: false,
-  loading: () => null,
+  loading: () => <Loader />,
 });
 
 export default function Home() {
@@ -49,7 +50,7 @@ export default function Home() {
     }
   }, [dispatch, status, session]);
 
-  if (sessionStatus === "loading") return <p>Loading session...</p>;
+  if (sessionStatus === "loading") return <Loader />;
 
   const filteredBooks = books.filter((book: Book) =>
     book.title.toLowerCase().includes(searchQuery.toLowerCase())
