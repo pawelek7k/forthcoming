@@ -63,7 +63,7 @@ export default function Home() {
     <>
       <div>
         <Welcome email={email} username={username} />
-        {status === "loading" && <p>Loading books...</p>}
+        {status === "loading" && <Loader />}
         {status === "failed" && <p>{error}</p>}
         <ul className="flex flex-col gap-4">
           {filteredBooks.map((book: Book) => (
