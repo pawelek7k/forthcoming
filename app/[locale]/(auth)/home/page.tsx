@@ -22,7 +22,7 @@ export default function Home() {
   const dispatch = useDispatch();
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { books, status, error } = useSelector(
+  const { books, status, error, searchQuery } = useSelector(
     (state: RootState) => state.books
   );
 
@@ -51,6 +51,10 @@ export default function Home() {
 
   if (sessionStatus === "loading") return <p>Loading session...</p>;
 
+  const filteredBooks = books.filter((book: Book) =>
+    book.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   const email = session?.user?.email ?? "unknown@example.com";
   const username = session?.user?.name ?? email.split("@")[0];
 
@@ -61,7 +65,7 @@ export default function Home() {
         {status === "loading" && <p>Loading books...</p>}
         {status === "failed" && <p>{error}</p>}
         <ul className="flex flex-col gap-4">
-          {books.map((book: Book) => (
+          {filteredBooks.map((book: Book) => (
             <BookItem
               key={book._id.toString()}
               book={book}
@@ -69,6 +73,7 @@ export default function Home() {
             />
           ))}
         </ul>
+        {filteredBooks.length === 0 && <p>No books found.</p>}
       </div>
       {isModalOpen && (
         <Modal isOpen={isModalOpen} onClose={closeModal} book={selectedBook} />
