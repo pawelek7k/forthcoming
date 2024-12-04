@@ -4,14 +4,14 @@ import { useSession } from "next-auth/react";
 import { useTranslations } from "next-intl";
 import Notiflix from "notiflix";
 import { useState } from "react";
-import { Loader } from "./Loader";
 import { Button } from "./Button";
+import { Loader } from "./Loader";
 
-interface ButtonsProps {
+type ButtonsProps = {
   book: Book;
-}
+};
 
-export const Buttons: React.FC<ButtonsProps> = ({ book }) => {
+export const Buttons = ({ book }: ButtonsProps) => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const { data: session } = useSession();
   const router = useRouter();
