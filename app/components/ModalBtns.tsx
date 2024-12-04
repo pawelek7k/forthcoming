@@ -65,7 +65,7 @@ export const Buttons = ({ book }: ButtonsProps) => {
           <Button
             primary={true}
             onClick={handleStartReading}
-            isSubmitting={isSubmitting}
+            isDisabled={isSubmitting}
           >
             {t("startReading")}
           </Button>
