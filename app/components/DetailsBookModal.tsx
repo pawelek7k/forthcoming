@@ -58,6 +58,9 @@ export const DetailsBookModal = ({ isOpen, onClose, book }: ModalType) => {
                   sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                 />
               </div>
+              <div>
+                <Buttons book={book} />
+              </div>
             </div>
             <div className="w-full flex flex-col p-0 justify-center md:py-6 gap-2">
               <Heading as="h5" className="font-semibold">
@@ -96,7 +99,6 @@ export const DetailsBookModal = ({ isOpen, onClose, book }: ModalType) => {
               </ul>
             </div>
           </div>
-          <Buttons book={book} />
         </div>
       </div>
     </>
