@@ -60,7 +60,7 @@ export const Buttons = ({ book }: ButtonsProps) => {
   return (
     <>
       {isSubmitting && <Loader />}
-      <ul className="flex justify-between mt-2 flex-col gap-4 sm:flex-row">
+      <ul className="flex justify-between mt-2 flex-col gap-4">
         <li>
           <Button
             primary={true}
