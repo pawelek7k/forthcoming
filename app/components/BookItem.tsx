@@ -1,14 +1,21 @@
+"use client";
+
 import { Book } from "@/types/book";
+import { useState } from "react";
+import { IoTrashBin } from "react-icons/io5";
 import { Cover } from "./Cover";
 import { Heading } from "./Heading";
 
 export const BookItem = ({
   book,
   onBookClick,
+  isInLibrary,
 }: {
   book: Book;
   onBookClick?: (book: Book) => void;
+  isInLibrary: boolean;
 }) => {
+  const [hovered, setHovered] = useState(false);
   return (
     <li
       key={book._id.toString()}
@@ -28,6 +35,26 @@ export const BookItem = ({
           <p className="text-sm md:text-base">{book.description}</p>
         </div>
       </div>
+      {isInLibrary && (
+        <div
+          className="flex items-center justify-center p-4 md:p-12 relative"
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+        >
+          <button
+            // onClick={() => onRemove(book._id)}
+            className="flex items-center justify-center"
+            aria-label="Remove book from library"
+          >
+            <IoTrashBin className="text-red-500 transition ease-in-out hover:text-rose-950 w-6 h-6" />
+          </button>
+          {hovered && (
+            <div className="absolute bottom-full mb-2 px-2 py-1 text-sm bg-neutral-300 text-sky-950 dark:bg-zinc-950 rounded-md dark:text-neutral-100">
+              Remove from library
+            </div>
+          )}
+        </div>
+      )}
     </li>
   );
 };
