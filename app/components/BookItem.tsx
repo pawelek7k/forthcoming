@@ -49,7 +49,7 @@ export const BookItem = ({
             <IoTrashBin className="text-red-500 transition ease-in-out hover:text-rose-950 w-6 h-6" />
           </button>
           {hovered && (
-            <div className="absolute bottom-full mb-2 px-2 py-1 text-sm bg-neutral-300 text-sky-950 dark:bg-zinc-950 rounded-md dark:text-neutral-100">
+            <div className="absolute top-8 mb-2 px-2 py-1 text-sm bg-zinc-950 rounded-md text-neutral-100">
               Remove from library
             </div>
           )}
