@@ -1,6 +1,7 @@
 import Notiflix from "notiflix";
 import { ChangeEvent, KeyboardEvent, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
+import { Tag } from "./Tag";
 
 type TagType = {
   name: string;
@@ -64,15 +65,12 @@ export const Tags = ({ name, value = [], onChange }: TagType) => {
       <input type="hidden" name={name} value={JSON.stringify(words)} />
       <div className="flex gap-2 flex-wrap">
         {words.map((word, index) => (
-          <div
-            className="dark:bg-zinc-950/30 bg-sky-950/30 shadow-lg rounded-full py-1 min-w-12 text-center flex flex-nowrap items-center gap-1 px-2 mb-4"
-            key={index}
-          >
+          <Tag key={index}>
             <span className="text-nowrap">{word}</span>
             <div onClick={() => handleDelete(index)} className="cursor-pointer">
               <RxCross2 />
             </div>
-          </div>
+          </Tag>
         ))}
       </div>
     </div>
