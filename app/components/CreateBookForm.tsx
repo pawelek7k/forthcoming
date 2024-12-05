@@ -9,6 +9,7 @@ import { Tags } from "./CreateTag";
 import { InputField } from "./InputField";
 import { Loader } from "./Loader";
 import { ToggleSwitch } from "./ToggleSwitch";
+import { DropdownMenu } from "./Dropdown";
 
 export const CreateForm = () => {
   const [formData, setFormData] = useState({
@@ -92,11 +93,11 @@ export const CreateForm = () => {
               label={"description"}
             />
             <div className="flex gap-6 items-center justify-between">
-              {/* <DropdownMenu
+              <DropdownMenu
                 name="genre"
                 value={formData.genre}
                 onChange={handleChange("genre")}
-              /> */}
+              />
               <div className="flex gap-2 items-center justify-center">
                 <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
                   {t("adultChecker")}
