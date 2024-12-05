@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import { Button } from "./Button";
 import { CoverPicker } from "./CoverPicker";
 import { Tags } from "./CreateTag";
+import { InputField } from "./InputField";
 import { Loader } from "./Loader";
 import { ToggleSwitch } from "./ToggleSwitch";
 
@@ -77,23 +78,12 @@ export const CreateForm = () => {
             />
           </div>
           <div className="sm:w-[25rem] w-screen p-10">
-            <div className="mb-4">
-              <label
-                htmlFor="title"
-                className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2"
-              >
-                {t("title")}
-              </label>
-              <input
-                type="text"
-                name="title"
-                id="title"
-                placeholder="Title"
-                className="w-full px-3 py-2 rounded-lg dark:text-neutral-100 dark:bg-rose-950/30 text-gray-900 placeholder-gray-500 focus:outline-none shadow-lg backdrop-blur-md"
-                value={formData.title}
-                onChange={(e) => handleChange("title")(e.target.value)}
-              />
-            </div>
+            <InputField
+              id={"title"}
+              onChange={(e) => handleChange("title")(e.target.value)}
+              placeholder={"Title"}
+              label={"Title"}
+            />
             <label
               htmlFor="description"
               className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2"
