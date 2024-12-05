@@ -84,19 +84,12 @@ export const CreateForm = () => {
               placeholder={"Title"}
               label={"Title"}
             />
-            <label
-              htmlFor="description"
-              className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2"
-            >
-              {t("description")}
-            </label>
-            <textarea
-              id="description"
-              name="description"
-              className="w-full px-3 py-2 rounded-lg dark:text-neutral-100 dark:bg-rose-950/30 text-gray-900 placeholder-gray-500 focus:outline-none shadow-lg backdrop-blur-md resize-none"
-              placeholder="Describe your book"
-              value={formData.description}
+            <InputField
+              component="textarea"
+              id={"description"}
               onChange={(e) => handleChange("description")(e.target.value)}
+              placeholder={"Description"}
+              label={"description"}
             />
             <div className="flex gap-6 items-center justify-between">
               {/* <DropdownMenu
