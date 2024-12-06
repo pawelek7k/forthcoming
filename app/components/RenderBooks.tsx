@@ -1,17 +1,16 @@
 "use client";
 
 import { filterBooks } from "@/lib/book/filters";
+import { RootState } from "@/lib/redux/store";
 import type { Book } from "@/types/book";
 import { useCallback, useState } from "react";
+import { useSelector } from "react-redux";
 import { BookItem } from "./BookItem";
 import { DetailsBookModal } from "./DetailsBookModal";
 import { Heading } from "./Heading";
-import { useSelector } from "react-redux";
-import { RootState } from "@/lib/redux/store";
 
 type RenderBooksType = {
   books: Book[];
-  searchQuery?: string;
   userLibrary?: string[];
 };
 
