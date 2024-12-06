@@ -8,6 +8,8 @@ type BooksStateType = {
     error: string | null;
     searchQuery: string;
     selectedGenre: string | null;
+    selectedLanguage: string | null;
+    forAdult: boolean;
 }
 
 const initialState: BooksStateType = {
@@ -16,6 +18,8 @@ const initialState: BooksStateType = {
     error: null,
     searchQuery: '',
     selectedGenre: null,
+    selectedLanguage: null,
+    forAdult: false,
 }
 
 export const fetchBooks = createAsyncThunk(
