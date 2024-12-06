@@ -62,7 +62,7 @@ export const DetailsBookModal = ({ isOpen, onClose, book }: ModalType) => {
                 <Buttons book={book} />
               </div>
             </div>
-            <div className="w-full flex flex-col p-0 justify-center md:py-6 gap-2">
+            <div className="w-full flex flex-col p-0  md:py-6 gap-2">
               <Heading as="h5" className="font-semibold">
                 {t("description")}:
               </Heading>
