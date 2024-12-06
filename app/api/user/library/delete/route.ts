@@ -1,6 +1,6 @@
 
-import { connectToDatabase } from '@/lib/db';
-import { authOptions } from '@/utils/authOptions';
+import { authOptions } from '@/lib/authOptions';
+import { connectToDatabase } from '@/lib/mongoDB/connect';
 import { getServerSession } from 'next-auth/next';
 import { NextRequest, NextResponse } from 'next/server';
 

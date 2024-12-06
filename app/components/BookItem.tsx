@@ -1,10 +1,11 @@
 "use client";
 
 import { Book } from "@/types/book";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { IoTrashBin } from "react-icons/io5";
 import { Cover } from "./Cover";
 import { Heading } from "./Heading";
+import Notiflix from "notiflix";
 
 export const BookItem = ({
   book,
@@ -16,6 +17,25 @@ export const BookItem = ({
   isInLibrary: boolean;
 }) => {
   const [hovered, setHovered] = useState(false);
+
+  const removeBookFromLibrary = useCallback(async (bookId: string) => {
+    try {
+      const response = await fetch("/api/user/library/delete", {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ bookId }),
+      });
+
+      if (!response.ok) throw new Error("Failed to remove book");
+
+      Notiflix.Notify.success("Book removed from library");
+    } catch (err) {
+      Notiflix.Notify.failure("Error removing book");
+    }
+  }, []);
+
   return (
     <li
       key={book._id.toString()}
@@ -42,7 +62,7 @@ export const BookItem = ({
           onMouseLeave={() => setHovered(false)}
         >
           <button
-            // onClick={() => onRemove(book._id)}
+            onClick={() => removeBookFromLibrary(book._id.toString())}
             className="flex items-center justify-center"
             aria-label="Remove book from library"
           >
