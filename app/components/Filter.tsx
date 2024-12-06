@@ -51,24 +51,34 @@ export const Filter = () => {
       />
       <div className="flex justify-between flex-col gap-4">
         <DropdownMenu onChange={handleGenreChange} />
-        <div className="flex gap-2 items-center">
-          <span className="text-sm">PL</span>
-          <ToggleSwitch
-            name="languageToggle"
-            value="pl"
-            onValue="pl"
-            offValue="eng"
-            onChange={(newValue) => console.log("Nowa wartość:", newValue)}
-          />
-          <span className="text-sm">ENG</span>
+        <div className="flex gap-2 items-center justify-between">
+          <Heading as="h4">Language of books</Heading>
+          <div className="flex items-center gap-2">
+            <span className="text-sm">PL</span>
+            <ToggleSwitch
+              name="languageToggle"
+              value="pl"
+              onValue="pl"
+              offValue="eng"
+              onChange={(newValue) => console.log("Nowa wartość:", newValue)}
+            />
+            <span className="text-sm">ENG</span>
+          </div>
         </div>
-        <ToggleSwitch
-          name="booleanToggle"
-          value="false"
-          onValue="true"
-          offValue="false"
-          onChange={(newValue) => console.log("Nowa wartość:", newValue)}
-        />
+        <div className="flex gap-2 items-center justify-between">
+          <Heading as="h4">For Adult</Heading>
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-sm">YES</span>
+            <ToggleSwitch
+              name="booleanToggle"
+              value="false"
+              onValue="true"
+              offValue="false"
+              onChange={(newValue) => console.log("Nowa wartość:", newValue)}
+            />
+            <span className="text-sm">NO</span>
+          </div>
+        </div>
       </div>
       <Button onClick={clearFilters} primary={true}>
         Clear Filters
