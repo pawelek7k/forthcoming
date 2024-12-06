@@ -4,24 +4,28 @@ type ToggleSwitchType = {
   name: string;
   onChange: (value: string) => void;
   value?: string;
+  onValue?: string;
+  offValue?: string;
 };
 
 export const ToggleSwitch = ({
   name,
   value = "off",
   onChange,
+  onValue = "on",
+  offValue = "off",
 }: ToggleSwitchType) => {
-  const [checked, setChecked] = useState(value === "on");
+  const [checked, setChecked] = useState(value === onValue);
 
   const handleChange = () => {
     const newChecked = !checked;
     setChecked(newChecked);
-    onChange(newChecked ? "on" : "off");
+    onChange(newChecked ? onValue : offValue);
   };
 
   useEffect(() => {
-    setChecked(value === "on");
-  }, [value]);
+    setChecked(value === onValue);
+  }, [value, onValue]);
 
   return (
     <div className="relative inline-flex items-center cursor-pointer">
