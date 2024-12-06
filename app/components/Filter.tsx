@@ -25,6 +25,11 @@ export const Filter = () => {
     dispatch(setSelectedGenre(genre));
   };
 
+  const clearFilters = () => {
+    dispatch(setSearchQuery(""));
+    dispatch(setSelectedGenre(null));
+  };
+
   return (
     <motion.div
       className="h-screen w-full bg-zinc-950 pt-20 flex flex-col p-6"
@@ -44,7 +49,9 @@ export const Filter = () => {
         label="Enter title"
       />
       <DropdownMenu onChange={handleGenreChange} />
-      <Button primary={true}>Submit</Button>
+      <Button onClick={clearFilters} primary={true}>
+        Clear Filters
+      </Button>
     </motion.div>
   );
 };
