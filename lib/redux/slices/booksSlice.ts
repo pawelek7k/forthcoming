@@ -56,6 +56,12 @@ const booksSlice = createSlice({
         setSelectedGenre(state, action) {
             state.selectedGenre = action.payload;
         },
+        setSelectedLanguage(state, action) {
+            state.selectedLanguage = action.payload;
+        },
+        toggleForAdult(state) {
+            state.forAdult = !state.forAdult;
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -79,7 +85,7 @@ const booksSlice = createSlice({
     },
 });
 
-export const { setSearchQuery, setSelectedGenre } = booksSlice.actions;
+export const { setSearchQuery, setSelectedGenre, setSelectedLanguage, toggleForAdult } = booksSlice.actions;
 
 
 export default booksSlice.reducer;
