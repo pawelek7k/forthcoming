@@ -29,9 +29,11 @@ export const RenderBooks = ({ books, userLibrary = [] }: RenderBooksType) => {
     setSelectedBook(null);
   }, []);
 
-  const { searchQuery } = useSelector((state: RootState) => state.books);
+  const { searchQuery, selectedGenre } = useSelector(
+    (state: RootState) => state.books
+  );
 
-  const filteredBooks = filterBooks(books, searchQuery);
+  const filteredBooks = filterBooks(books, searchQuery, selectedGenre);
 
   return (
     <>

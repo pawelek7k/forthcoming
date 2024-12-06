@@ -11,7 +11,7 @@ type DropdownType = {
 
 export const DropdownMenu = ({ name, value, onChange }: DropdownType) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [selectedGenre, setSelectedGenre] = useState(value);
+  const [selectedGenre, setSelectedGenre] = useState(value || "");
   const bookGenres = ArrayGenres;
   const t = useTranslations("global");
 
@@ -22,7 +22,7 @@ export const DropdownMenu = ({ name, value, onChange }: DropdownType) => {
   };
 
   useEffect(() => {
-    setSelectedGenre(value);
+    setSelectedGenre(value || "");
   }, [value]);
 
   return (
@@ -45,7 +45,7 @@ export const DropdownMenu = ({ name, value, onChange }: DropdownType) => {
           {bookGenres.map(({ id, name }) => (
             <li
               key={id}
-              className=" rounded-md cursor-pointer text-neutral-300 hover:bg-rose-950/10"
+              className="rounded-md cursor-pointer text-neutral-300 hover:bg-rose-950/10"
               onClick={() => handleSelectGenre(name)}
             >
               {name}
@@ -53,7 +53,7 @@ export const DropdownMenu = ({ name, value, onChange }: DropdownType) => {
           ))}
         </ul>
       )}
-      <input type="hidden" id={name} name={name} value={selectedGenre} />
+      <input type="hidden" id={name} name={name} value={selectedGenre || ""} />
     </div>
   );
 };

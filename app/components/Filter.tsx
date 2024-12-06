@@ -3,9 +3,13 @@ import { Button } from "./Button";
 import { Heading } from "./Heading";
 import { InputField } from "./InputField";
 
-import { setSearchQuery } from "@/lib/redux/slices/booksSlice";
+import {
+  setSearchQuery,
+  setSelectedGenre,
+} from "@/lib/redux/slices/booksSlice";
 import { RootState } from "@/lib/redux/store";
 import { useDispatch, useSelector } from "react-redux";
+import { DropdownMenu } from "./Dropdown";
 
 export const Filter = () => {
   const dispatch = useDispatch();
@@ -15,6 +19,10 @@ export const Filter = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setSearchQuery(e.target.value));
+  };
+
+  const handleGenreChange = (genre: string) => {
+    dispatch(setSelectedGenre(genre));
   };
 
   return (
@@ -35,6 +43,7 @@ export const Filter = () => {
         value={searchQuery}
         label="Enter title"
       />
+      <DropdownMenu onChange={handleGenreChange} />
       <Button primary={true}>Submit</Button>
     </motion.div>
   );

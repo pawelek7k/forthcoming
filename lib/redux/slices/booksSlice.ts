@@ -7,6 +7,7 @@ type BooksStateType = {
     status: 'idle' | 'loading' | 'succeeded' | 'failed';
     error: string | null;
     searchQuery: string;
+    selectedGenre: string | null;
 }
 
 const initialState: BooksStateType = {
@@ -14,6 +15,7 @@ const initialState: BooksStateType = {
     status: 'idle',
     error: null,
     searchQuery: '',
+    selectedGenre: null,
 }
 
 export const fetchBooks = createAsyncThunk(
@@ -47,6 +49,9 @@ const booksSlice = createSlice({
         setSearchQuery(state, action) {
             state.searchQuery = action.payload;
         },
+        setSelectedGenre(state, action) {
+            state.selectedGenre = action.payload;
+        },
     },
     extraReducers: (builder) => {
         builder
@@ -70,6 +75,7 @@ const booksSlice = createSlice({
     },
 });
 
-export const { setSearchQuery } = booksSlice.actions;
+export const { setSearchQuery, setSelectedGenre } = booksSlice.actions;
+
 
 export default booksSlice.reducer;
