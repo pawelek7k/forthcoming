@@ -6,6 +6,8 @@ import { InputField } from "./InputField";
 import {
   setSearchQuery,
   setSelectedGenre,
+  setSelectedLanguage,
+  toggleForAdult,
 } from "@/lib/redux/slices/booksSlice";
 import { RootState } from "@/lib/redux/store";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +16,10 @@ import { ToggleSwitch } from "./ToggleSwitch";
 
 export const Filter = () => {
   const dispatch = useDispatch();
+  const selectedLanguage = useSelector(
+    (state: RootState) => state.books.selectedLanguage
+  );
+  const forAdult = useSelector((state: RootState) => state.books.forAdult);
   const searchQuery = useSelector(
     (state: RootState) => state.books.searchQuery
   );
@@ -29,6 +35,8 @@ export const Filter = () => {
   const clearFilters = () => {
     dispatch(setSearchQuery(""));
     dispatch(setSelectedGenre(null));
+    dispatch(setSelectedLanguage(null));
+    dispatch(toggleForAdult());
   };
 
   return (
@@ -57,10 +65,10 @@ export const Filter = () => {
             <span className="text-sm">PL</span>
             <ToggleSwitch
               name="languageToggle"
-              value="pl"
+              value={selectedLanguage || "eng"}
               onValue="pl"
               offValue="eng"
-              onChange={(newValue) => console.log("Nowa wartość:", newValue)}
+              onChange={(value) => dispatch(setSelectedLanguage(value))}
             />
             <span className="text-sm">ENG</span>
           </div>
@@ -68,15 +76,13 @@ export const Filter = () => {
         <div className="flex gap-2 items-center justify-between">
           <Heading as="h4">For Adult</Heading>
           <div className="flex items-center gap-2 mb-4">
-            <span className="text-sm">YES</span>
-            <ToggleSwitch
-              name="booleanToggle"
-              value="false"
-              onValue="true"
-              offValue="false"
-              onChange={(newValue) => console.log("Nowa wartość:", newValue)}
-            />
             <span className="text-sm">NO</span>
+            <ToggleSwitch
+              name="forAdultToggle"
+              value={forAdult ? "on" : "off"}
+              onChange={() => dispatch(toggleForAdult())}
+            />
+            <span className="text-sm">YES</span>
           </div>
         </div>
       </div>
