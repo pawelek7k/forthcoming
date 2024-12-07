@@ -1,6 +1,7 @@
 import { Heading } from "@/app/components/Heading";
 import { Loader } from "@/app/components/Loader";
 import { RenderBooks } from "@/app/components/RenderBooks";
+import { Section } from "@/app/components/Section";
 import { getUserLibrary } from "@/lib/mongoDB/getUserLibrary";
 import { redirect } from "@/navigation";
 import { Suspense } from "react";
@@ -19,12 +20,12 @@ const LibraryPage = async () => {
   }
 
   return (
-    <section>
+    <Section>
       <Heading as="h1">Your Library!</Heading>
       <Suspense fallback={<Loader />}>
         <RenderBooks books={books} userLibrary={userLibrary} />
       </Suspense>
-    </section>
+    </Section>
   );
 };
 
