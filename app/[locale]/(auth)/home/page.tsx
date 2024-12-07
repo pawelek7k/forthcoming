@@ -15,7 +15,7 @@ const Welcome = dynamic(() => import("@/app/components/Welcome"), {
   loading: () => <Loader />,
 });
 
-export default function Home() {
+const HomePage = () => {
   const { data: session, status: sessionStatus } = useSession();
   const router = useRouter();
   const dispatch = useDispatch();
@@ -49,4 +49,6 @@ export default function Home() {
       {status === "succeeded" && <RenderBooks books={books} />}
     </>
   );
-}
+};
+
+export default HomePage;

@@ -10,7 +10,7 @@ export const metadata = {
   description: "Future",
 };
 
-const LibraryPage: React.FC = async () => {
+const LibraryPage = async () => {
   const { books, userLibrary } = await getUserLibrary();
 
   if (books.length === 0) {
