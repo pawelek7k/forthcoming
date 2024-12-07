@@ -2,6 +2,7 @@
 
 import { Loader } from "@/app/components/Loader";
 import { RenderBooks } from "@/app/components/RenderBooks";
+import { Section } from "@/app/components/Section";
 import { fetchBooks } from "@/lib/redux/slices/booksSlice";
 import { RootState } from "@/lib/redux/store";
 import { useRouter } from "@/navigation";
@@ -42,12 +43,12 @@ const HomePage = () => {
   const username = session?.user?.name ?? email.split("@")[0];
 
   return (
-    <>
+    <Section>
       <Welcome email={email} username={username} />
       {status === "loading" && <Loader />}
       {status === "failed" && <p>{error}</p>}
       {status === "succeeded" && <RenderBooks books={books} />}
-    </>
+    </Section>
   );
 };
 
