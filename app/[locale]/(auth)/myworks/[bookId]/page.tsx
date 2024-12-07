@@ -1,3 +1,5 @@
+import { RichTextEditor } from "@/app/components/Editor";
+
 type CreateChaptersType = {
   params: {
     bookId: string;
@@ -9,10 +11,10 @@ export const metadata = {
   description: "Write Your Best Thoughts",
 };
 
-const CreateChapters = ({ params }: CreateChaptersType) => {
-  const { bookId } = params;
+const CreateChapters = async ({ params }: CreateChaptersType) => {
+  const { bookId } = await params;
 
-  return <>{/* <RichTextEditor bookId={bookId} /> */}</>;
+  return <p>ID: {bookId}</p>;
 };
 
 export default CreateChapters;

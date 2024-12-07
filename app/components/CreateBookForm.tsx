@@ -43,7 +43,7 @@ export const CreateForm = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/books/add", {
+      const response = await fetch("/api/book/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
