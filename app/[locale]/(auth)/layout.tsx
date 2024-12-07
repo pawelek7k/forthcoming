@@ -25,13 +25,9 @@ export default async function RootLayout(
 ) {
   const params = await props.params;
 
-  const {
-    locale
-  } = params;
+  const { locale } = params;
 
-  const {
-    children
-  } = props;
+  const { children } = props;
 
   const messages = await getMessages();
   return (
@@ -43,7 +39,7 @@ export default async function RootLayout(
           <NextIntlClientProvider messages={messages}>
             <NextAuthProvider>
               <Navigation />
-              <main className="pt-20 p-6 min-h-screen">{children}</main>
+              <main className="min-h-screen">{children}</main>
             </NextAuthProvider>
           </NextIntlClientProvider>
         </body>

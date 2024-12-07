@@ -8,7 +8,7 @@ type SectionType = {
 };
 
 export const Section = ({ children, className, ...rest }: SectionType) => {
-  const classes = classNames("p-20", className);
+  const classes = classNames("pt-20 p-6 ", className);
 
   return (
     <section {...rest} className={classes}>
