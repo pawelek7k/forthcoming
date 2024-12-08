@@ -54,9 +54,9 @@ export const Filter = () => {
         <InputField
           id="filter-title"
           onChange={handleInputChange}
-          placeholder="Enter title"
+          placeholder="Enter a title"
           value={searchQuery}
-          label="Enter title"
+          label="Enter a title"
         />
         <div className="flex justify-between flex-col gap-2">
           <DropdownMenu onChange={handleGenreChange} />
