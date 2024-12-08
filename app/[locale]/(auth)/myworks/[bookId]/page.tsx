@@ -1,20 +1,26 @@
-import { RichTextEditor } from "@/app/components/Editor";
+"use client";
+
+import { EditorContainer } from "@/app/components/EditorContainer";
+import { Section } from "@/app/components/Section";
+import { use } from "react";
 
 type CreateChaptersType = {
-  params: {
-    bookId: string;
-  };
+  params: Promise<{ bookId: string }>;
 };
 
-export const metadata = {
-  title: "Future - Book Content",
-  description: "Write Your Best Thoughts",
-};
+const CreateChapters = ({ params }: CreateChaptersType) => {
+  const { bookId } = use(params);
 
-const CreateChapters = async ({ params }: CreateChaptersType) => {
-  const { bookId } = await params;
+  if (!bookId) {
+    console.error("BookId is missing");
+    return null;
+  }
 
-  return <p>ID: {bookId}</p>;
+  return (
+    <Section>
+      <EditorContainer bookId={bookId} />
+    </Section>
+  );
 };
 
 export default CreateChapters;
