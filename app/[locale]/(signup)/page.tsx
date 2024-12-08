@@ -1,16 +1,16 @@
 "use client";
 
 import { createUser } from "@/lib/signup/createUser";
-import { signIn } from "next-auth/react";
+import { useRouter } from "@/navigation";
+import { signIn, useSession } from "next-auth/react";
+import { useTranslations } from "next-intl";
 import Notiflix from "notiflix";
 import { useState } from "react";
 import { Button } from "../../components/Button";
 import { LoginForm } from "../../components/login/Login";
 import { SignupForm } from "../../components/login/Signup";
-import { useRouter } from "@/navigation";
-import { useTranslations } from "next-intl";
 
-export default function Login() {
+const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
     email: "john.doe99@example.com",
@@ -21,6 +21,9 @@ export default function Login() {
   const router = useRouter();
   const loginT = useTranslations("login");
   const signupT = useTranslations("signup");
+  const { data: session } = useSession();
+
+  if (session) router.push("/home");
 
   const toggleForm = () => setIsLogin((prev) => !prev);
 
@@ -112,4 +115,6 @@ export default function Login() {
       {/* {isLoading && <Loader />} */}
     </div>
   );
-}
+};
+
+export default Login;

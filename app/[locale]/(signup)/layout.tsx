@@ -1,6 +1,7 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import localFont from "next/font/local";
+import { NextAuthProvider } from "../(auth)/NextAuthProvider";
 import "../../globals.css";
 
 const geistSans = localFont({
@@ -22,13 +23,9 @@ export default async function RootLayout(
 ) {
   const params = await props.params;
 
-  const {
-    locale
-  } = params;
+  const { locale } = params;
 
-  const {
-    children
-  } = props;
+  const { children } = props;
 
   const messages = await getMessages();
   return (
@@ -37,7 +34,7 @@ export default async function RootLayout(
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-950`}
       >
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <NextAuthProvider>{children}</NextAuthProvider>
         </NextIntlClientProvider>
       </body>
     </html>
