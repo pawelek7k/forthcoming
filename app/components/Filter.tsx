@@ -1,8 +1,3 @@
-import { motion } from "framer-motion";
-import { Button } from "./Button";
-import { Heading } from "./Heading";
-import { InputField } from "./InputField";
-
 import {
   setSearchQuery,
   setSelectedGenre,
@@ -10,8 +5,12 @@ import {
   toggleForAdult,
 } from "@/lib/redux/slices/booksSlice";
 import { RootState } from "@/lib/redux/store";
+import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
+import { Button } from "./Button";
 import { DropdownMenu } from "./Dropdown";
+import { Heading } from "./Heading";
+import { InputField } from "./InputField";
 import { ToggleSwitch } from "./ToggleSwitch";
 import { UserProfile } from "./UserProfile";
 
