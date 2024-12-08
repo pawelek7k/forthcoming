@@ -9,6 +9,7 @@ import { useState } from "react";
 import { Button } from "../../components/Button";
 import { LoginForm } from "../../components/login/Login";
 import { SignupForm } from "../../components/login/Signup";
+import { Section } from "@/app/components/Section";
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -88,7 +89,7 @@ const Login = () => {
   };
 
   return (
-    <div className="h-screen container mx-auto flex flex-col justify-center items-center">
+    <Section className="h-screen container mx-auto flex flex-col justify-center items-center">
       {isLogin ? (
         <LoginForm
           formData={formData}
@@ -113,7 +114,7 @@ const Login = () => {
         </Button>
       </div>
       {/* {isLoading && <Loader />} */}
-    </div>
+    </Section>
   );
 };
 
