@@ -16,8 +16,8 @@ const DetailsDynamicPage = async ({ params }: DetailsType) => {
   if (!book) return <section>Book not found</section>;
 
   return (
-    <Section>
-      <div className="flex flex-col items-center  shadow-lg rounded-lg">
+    <Section className="flex flex-col gap-4">
+      <div className="flex flex-col items-center shadow-lg rounded-lg">
         <div className="flex md:p-10 p-4 gap-12 flex-col md:flex-row items-center md:items-start">
           <div>
             <div className="relative overflow-hidden rounded-md md:w-48 md:h-80 w-40 h-60">
