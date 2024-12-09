@@ -63,12 +63,14 @@ export const DetailsBookModal = ({ isOpen, onClose, book }: ModalType) => {
               </div>
             </div>
             <div className="w-full flex flex-col p-0  md:py-6 gap-2">
-              <Heading as="h5" className="font-semibold">
-                {t("description")}:
-              </Heading>
-              <p className="text-gray-700 dark:text-neutral-100 hidden md:block">
-                {book.description}
-              </p>
+              <div className="hidden sm:block">
+                <Heading as="h5" className="font-semibold">
+                  {t("description")}:
+                </Heading>
+                <p className="text-gray-700 dark:text-neutral-100">
+                  {book.description}
+                </p>
+              </div>
               <div className="flex justify-between">
                 <div className="flex gap-2">
                   <Heading as="h5" className="font-semibold">
