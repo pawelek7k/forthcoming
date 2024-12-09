@@ -31,7 +31,9 @@ const DetailsDynamicPage = async ({ params }: DetailsType) => {
             </div>
           </div>
           <div className="flex flex-col gap-4 ">
-            <Heading as="h1">{book.title}</Heading>
+            <Heading as="h1" className="font-semibold text-xl md:text-3xl">
+              {book.title}
+            </Heading>
             <p className="text-sm sm:text-base">{book.description}</p>
             <div className="flex gap-10">
               <div className="flex gap-2">
