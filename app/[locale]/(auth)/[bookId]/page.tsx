@@ -9,7 +9,7 @@ type DetailsType = {
 };
 
 const DetailsDynamicPage = async ({ params }: DetailsType) => {
-  const { bookId } = params;
+  const { bookId } = await params;
 
   const book = await getBookDetails(bookId);
 
