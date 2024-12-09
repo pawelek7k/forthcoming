@@ -1,11 +1,11 @@
 "use client";
 
 import { Book } from "@/types/book";
+import Notiflix from "notiflix";
 import { useCallback, useState } from "react";
 import { IoTrashBin } from "react-icons/io5";
 import { Cover } from "./Cover";
 import { Heading } from "./Heading";
-import Notiflix from "notiflix";
 
 export const BookItem = ({
   book,
@@ -48,7 +48,7 @@ export const BookItem = ({
           <Heading as="h3" className="font-semibold text-xl">
             {book.title}
           </Heading>
-          <div className="flex gap-2 font-semibold items-center rounded-full bg-zinc-100 text-zinc-950 px-4 w-max">
+          <div className="flex gap-2 font-semibold items-center rounded-full bg-zinc-100 text-zinc-950 px-4 w-max text-sm md:text-base">
             <Heading as="h4">For adult:</Heading>
             <span className="text-sm">{book.forAdult ? "YES" : "NO"}</span>
           </div>
