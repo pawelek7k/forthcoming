@@ -1,11 +1,11 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
 import { Sling as Hamburger } from "hamburger-react";
 import { useState } from "react";
+import { Filter } from "./Filter";
 import { LinkComponent as Link } from "./Link";
 import { Logo } from "./Logo";
-import { Filter } from "./Filter";
-import { AnimatePresence, motion } from "framer-motion";
 
 type LinkType = {
   label: string;
@@ -55,7 +55,7 @@ export const Navigation = () => {
               stiffness: 120,
               damping: 20,
             }}
-            className="bottom-0 max-w-sm shadow-lg z-30 h-screen w-3/12 bg-zinc-950 fixed top-0 right-0"
+            className="bottom-0 max-w-sm shadow-lg z-30 h-screen w-screen sm:w-[500px] bg-zinc-950 fixed top-0 right-0"
           >
             <Filter />
           </motion.div>

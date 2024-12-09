@@ -41,7 +41,7 @@ export const Filter = () => {
 
   return (
     <motion.div
-      className="h-screen w-full bg-zinc-950 pt-20 p-6 flex-col flex justify-between"
+      className="h-screen bg-zinc-950 pt-20 p-6 flex-col flex justify-between"
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 20 }}
