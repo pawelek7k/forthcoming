@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 type DetailsType = {
-  params: { bookId: string };
+  params: Promise<{ bookId: string }>;
 };
 
 const DetailsDynamicPage = async ({ params }: DetailsType) => {
