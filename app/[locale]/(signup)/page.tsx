@@ -10,6 +10,7 @@ import { Button } from "../../components/Button";
 import { LoginForm } from "../../components/login/Login";
 import { SignupForm } from "../../components/login/Signup";
 import { Section } from "@/app/components/Section";
+import { Loader } from "@/app/components/Loader";
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -55,7 +56,9 @@ const Login = () => {
           router.push("/home");
         }
       } catch (err) {
-        Notiflix.Notify.failure("Error logging in. Please try again.", err);
+        const errorMessage =
+          (err as Error)?.message || "An unknown error occurred.";
+        Notiflix.Notify.failure(errorMessage);
       } finally {
         setIsLoading(false);
       }
@@ -81,7 +84,9 @@ const Login = () => {
           router.push("/home");
         }
       } catch (err) {
-        Notiflix.Notify.failure("Error creating user. Try again later", err);
+        const errorMessage =
+          (err as Error)?.message || "An unknown error occurred.";
+        Notiflix.Notify.failure(errorMessage);
       } finally {
         setIsLoading(false);
       }
@@ -113,7 +118,7 @@ const Login = () => {
           {isLogin ? loginT("switch") : signupT("switch")}
         </Button>
       </div>
-      {/* {isLoading && <Loader />} */}
+      {isLoading && <Loader />}
     </Section>
   );
 };
