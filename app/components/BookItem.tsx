@@ -32,7 +32,7 @@ export const BookItem = ({
 
       Notiflix.Notify.success("Book removed from library");
     } catch (err) {
-      Notiflix.Notify.failure("Error removing book");
+      Notiflix.Notify.failure("Error removing book", err);
     }
   }, []);
 
