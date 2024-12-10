@@ -1,9 +1,9 @@
+import { authOptions } from '@/lib/authOptions';
 import { ArrayGenres } from '@/lib/data/bookGenre';
 import { connectToDatabase } from '@/lib/mongoDB/connect';
-import { authOptions } from '@/lib/authOptions';
+import Joi from 'joi';
 import { getServerSession } from 'next-auth';
 import { NextRequest, NextResponse } from 'next/server';
-import Joi from 'joi';
 
 const validGenres = ArrayGenres.map(genre => genre.name);
 const validLanguages = ['pl', 'eng'];
@@ -47,8 +47,7 @@ export async function POST(req: NextRequest) {
             { status: 201 }
         );
     } catch (err) {
-        console.error("API error:", err);
-        return NextResponse.json({ message: 'Internal Server Error', error: err.message }, { status: 500 });
+        return NextResponse.json({ error: `Internal Server Error ${err}` }, { status: 500 });
 
     }
 }

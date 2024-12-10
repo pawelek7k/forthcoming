@@ -42,7 +42,7 @@ export const Buttons = ({ book }: ButtonsProps) => {
         Notiflix.Notify.failure("Failed to add book to library.");
       }
     } catch (err) {
-      Notiflix.Notify.failure("Error adding book to library.", err);
+      Notiflix.Notify.failure(`Error adding book to library. ${err}`);
     }
   };
 
