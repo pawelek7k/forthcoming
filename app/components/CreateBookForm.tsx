@@ -17,6 +17,7 @@ export const CreateForm = () => {
     cover: "",
     description: "",
     forAdult: false,
+    date: "",
     tags: [] as string[],
     genre: "",
     lang: "pl" as "pl" | "eng",
@@ -34,6 +35,9 @@ export const CreateForm = () => {
     e.preventDefault();
     if (isSubmitting) return;
 
+    const currentDate = new Date().toISOString();
+    setFormData((prev) => ({ ...prev, datet: currentDate }));
+
     const { title, cover, description, genre, tags } = formData;
     if (!title || !cover || !description || !genre || tags.length === 0) {
       Notiflix.Notify.warning("Please fill in all fields before submitting.");
@@ -48,7 +52,7 @@ export const CreateForm = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, date: currentDate }),
       });
 
       if (!response.ok) throw new Error("Something went wrong");
