@@ -18,7 +18,7 @@ export const InputField = ({
 }: InputFieldType) => {
   const Component = component === "textarea" ? "textarea" : "input";
   return (
-    <div className="mb-4">
+    <div>
       <label
         htmlFor={id}
         className="block text-neutral-100 text-sm font-semibold mb-2 uppercase"
