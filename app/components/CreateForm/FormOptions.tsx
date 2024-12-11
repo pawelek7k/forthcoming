@@ -22,7 +22,7 @@ export const FormOptions = ({
       onChange={handleChange("genre")}
     />
     <div className="flex gap-2 items-center justify-center">
-      <span className="text-gray-700 dark:text-gray-300 text-sm font-medium">
+      <span className="z-0 text-zinc-100 text-sm font-semibold uppercase flex items-center">
         {t("adultChecker")}
       </span>
       <ToggleSwitch
