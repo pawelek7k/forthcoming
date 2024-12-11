@@ -48,7 +48,7 @@ export const Tags = ({ name, value = [], onChange }: TagType) => {
     <div className="flex flex-col">
       <label
         htmlFor="tags"
-        className="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2"
+        className="z-0 text-zinc-100 text-sm font-semibold uppercase flex items-center mb-2"
       >
         Tags
       </label>
