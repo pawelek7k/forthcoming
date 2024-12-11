@@ -96,7 +96,7 @@ export const CreateForm = () => {
             value={formData.cover}
             onChange={handleChange("cover")}
           />
-          <div className="sm:w-[25rem] w-screen p-10">
+          <div className="sm:w-[25rem] w-screen p-10 flex flex-col gap-2">
             <FormHeader />
             <FormFields formData={formData} handleChange={handleChange} />
             <FormOptions
