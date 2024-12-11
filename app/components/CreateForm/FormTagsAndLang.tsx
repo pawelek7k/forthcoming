@@ -17,7 +17,7 @@ export const FormTagsAndLang = ({
 }: FormTagsAndLangProps) => (
   <>
     <Tags name="tags" value={formData.tags} onChange={handleChange("tags")} />
-    <div className="flex gap-2 items-center mb-4 justify-between">
+    <div className="flex gap-2 items-center justify-between">
       <span className="z-0 text-zinc-100 text-sm font-semibold uppercase flex items-center">
         {t("langSwitch")}
       </span>
