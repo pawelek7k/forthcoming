@@ -1,4 +1,4 @@
-import { CreateForm } from "@/app/components/CreateBookForm";
+import { CreateForm } from "@/app/components/CreateForm";
 import { Heading } from "@/app/components/Heading";
 import { Section } from "@/app/components/Section";
 import { useTranslations } from "next-intl";

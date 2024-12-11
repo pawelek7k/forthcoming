@@ -16,6 +16,7 @@ const bookSchema = Joi.object({
     genre: Joi.string().valid(...validGenres).required(),
     tags: Joi.array().items(Joi.string().min(1)).required(),
     lang: Joi.string().valid(...validLanguages).required(),
+    date: Joi.date().iso().required()
 });
 
 export async function POST(req: NextRequest) {

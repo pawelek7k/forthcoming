@@ -1,4 +1,4 @@
-import { Heading } from "./Heading";
+import { Heading } from "../Heading";
 
 export const FormHeader = () => (
   <div className="text-center mb-6">
