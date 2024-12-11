@@ -25,6 +25,9 @@ export const initialFormData = {
 export const CreateForm = () => {
   const [formData, setFormData] = useState(initialFormData);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<
+    "idle" | "pending" | "fulfilled" | "rejected" | "warning"
+  >("idle");
   const router = useRouter();
   const t = useTranslations("global");
 
@@ -48,11 +51,13 @@ export const CreateForm = () => {
       formData.tags.length === 0
     ) {
       Notiflix.Notify.warning("Please fill in all fields before submitting.");
+      setStatus("warning");
+
       return;
     }
 
     setIsSubmitting(true);
-
+    setStatus("pending");
     try {
       console.log(formData);
 
@@ -65,6 +70,7 @@ export const CreateForm = () => {
       if (!response.ok) throw new Error("Something went wrong");
 
       const result = await response.json();
+      setStatus("fulfilled");
       Notiflix.Notify.success("Book successfully created!");
       router.push(`/myworks/${result.id}`);
     } catch (error) {
@@ -73,6 +79,7 @@ export const CreateForm = () => {
       console.error("Error:", error);
     } finally {
       setIsSubmitting(false);
+      setStatus("rejected");
     }
   };
 
@@ -102,8 +109,14 @@ export const CreateForm = () => {
               handleChange={handleChange}
               t={t}
             />
-            <Button primary={true} isDisabled={isSubmitting}>
-              Next
+            <Button
+              primary={status === "idle"}
+              warning={status === "warning"}
+              success={status === "fulfilled"}
+              danger={status === "rejected"}
+              isDisabled={status === "pending"}
+            >
+              {status === "pending" ? "Submitting..." : "Next"}
             </Button>
           </div>
         </form>
