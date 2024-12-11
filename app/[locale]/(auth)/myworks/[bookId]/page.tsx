@@ -1,8 +1,9 @@
 "use client";
 
 import { EditorContainer } from "@/app/components/EditorContainer";
+import { Loader } from "@/app/components/Loader";
 import { Section } from "@/app/components/Section";
-import { use } from "react";
+import { Suspense, use } from "react";
 
 type CreateChaptersType = {
   params: Promise<{ bookId: string }>;
@@ -18,7 +19,9 @@ const CreateChapters = ({ params }: CreateChaptersType) => {
 
   return (
     <Section>
-      <EditorContainer bookId={bookId} />
+      <Suspense fallback={<Loader />}>
+        <EditorContainer bookId={bookId} />
+      </Suspense>
     </Section>
   );
 };
