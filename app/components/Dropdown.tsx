@@ -31,7 +31,7 @@ export const DropdownMenu = ({ name, value, onChange }: DropdownType) => {
         type="button"
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
         aria-label="Select genre"
-        className="flex items-center text-gray-700 dark:text-neutral-100 text-sm font-medium mb-2"
+        className="z-0 text-zinc-100 text-sm font-semibold uppercase flex items-center"
       >
         {selectedGenre || t("genre")}
         <HiChevronDown
