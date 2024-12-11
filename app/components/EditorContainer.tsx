@@ -47,7 +47,7 @@ export const EditorContainer = ({ bookId }: CreateChaptersType) => {
   return (
     <div className="w-full min-h-screen p-6 sm:p-10 relative flex flex-col gap-4">
       <TinyMCEEditor value={text} onEditorChange={handleChange} />
-      <Button primary={true} onClick={handleSave}>
+      <Button primary={true} onClick={handleSave} className="w-max self-center">
         Save
       </Button>
     </div>
