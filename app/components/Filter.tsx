@@ -76,11 +76,11 @@ export const Filter = () => {
               <span className="text-sm">ENG</span>
             </div>
           </div>
-          <div className="flex gap-2 items-center justify-between">
-            <p className="text-neutral-100 text-sm font-semibold mb-2 uppercase">
+          <div className="flex items-center justify-between mb-4">
+            <p className="text-neutral-100 text-sm font-semibold uppercase">
               For Adult
             </p>
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2">
               <span className="text-sm">NO</span>
               <ToggleSwitch
                 name="forAdultToggle"
