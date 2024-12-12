@@ -31,7 +31,7 @@ export const LoginForm = ({
       <p className="text-zinc-950 shadow-zinc-100 bg-zinc-100 p-1 rounded-full shadow-lg text-center mb-6 font-semibold text-sm uppercase">
         {t("paragraph")}
       </p>
-      <form onSubmit={submitHandler}>
+      <form onSubmit={submitHandler} className="flex flex-col gap-6">
         <InputField
           id="email"
           name="email"
