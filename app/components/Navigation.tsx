@@ -18,6 +18,7 @@ export const Navigation = () => {
     { label: "Home", path: "/home" },
     { label: "Create", path: "/myworks/create" },
     { label: "Library", path: "/library" },
+    { label: "Notes", path: "/notes" },
   ];
 
   return (
