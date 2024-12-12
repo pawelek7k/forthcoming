@@ -64,8 +64,8 @@ export const SignupForm = ({
         <Button primary={true} isDisabled={isLoading}>
           {t("button")}
         </Button>
-        <Socials />
       </form>
+      <Socials />
     </div>
   );
 };
