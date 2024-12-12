@@ -62,8 +62,8 @@ export const LoginForm = ({
             <GoogleBtn />
           </li>
         </ul>
-        <Socials />
       </form>
+      <Socials />
     </div>
   );
 };
