@@ -58,7 +58,7 @@ export const Filter = () => {
           value={searchQuery}
           label="Enter a title"
         />
-        <div className="flex justify-between flex-col gap-2">
+        <div className="flex justify-between flex-col mt-4 gap-2">
           <DropdownMenu onChange={handleGenreChange} />
           <div className="flex gap-2 items-center justify-between">
             <Heading as="h4" className="text-sm">
