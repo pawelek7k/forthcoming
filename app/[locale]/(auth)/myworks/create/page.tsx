@@ -12,7 +12,12 @@ const CreatePage = () => {
   const t = useTranslations("headings");
   return (
     <Section>
-      <Heading as="h1">{t("create")}</Heading>
+      <Heading
+        as="h1"
+        className="text-3xl text-neutral-100 uppercase font-semibold"
+      >
+        {t("create")}
+      </Heading>
       <CreateForm />
     </Section>
   );
