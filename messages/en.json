@@ -44,7 +44,7 @@
   },
   "filters": {
     "heading": "Filters",
-    "search": "Search",
+    "search": "Enter a title",
     "applyFilters": "Apply Filters",
     "clearFilters": "Clear Filters"
   },

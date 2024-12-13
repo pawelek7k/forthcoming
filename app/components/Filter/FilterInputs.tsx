@@ -1,7 +1,3 @@
-import { InputField } from "../InputField";
-import { DropdownMenu } from "../Dropdown";
-import { Button } from "../Button";
-import { useDispatch, useSelector } from "react-redux";
 import {
   setSearchQuery,
   setSelectedGenre,
@@ -9,11 +5,18 @@ import {
   toggleForAdult,
 } from "@/lib/redux/slices/booksSlice";
 import { RootState } from "@/lib/redux/store";
-import { FilterLanguageToggle } from "./FilterLanguageToggle";
+import { useTranslations } from "next-intl";
+import { useDispatch, useSelector } from "react-redux";
+import { Button } from "../Button";
+import { DropdownMenu } from "../Dropdown";
+import { InputField } from "../InputField";
 import { FilterAdultToggle } from "./FilterAdultToggle";
+import { FilterLanguageToggle } from "./FilterLanguageToggle";
 
 export const FilterInputs = () => {
   const dispatch = useDispatch();
+  const t = useTranslations("filters");
+
   const searchQuery = useSelector(
     (state: RootState) => state.books.searchQuery
   );
@@ -38,9 +41,9 @@ export const FilterInputs = () => {
       <InputField
         id="filter-title"
         onChange={handleInputChange}
-        placeholder="Enter a title"
+        placeholder={t("search")}
         value={searchQuery}
-        label="Enter a title"
+        label={t("search")}
       />
       <div className="flex justify-between flex-col mt-4 gap-2">
         <DropdownMenu onChange={handleGenreChange} />
@@ -48,7 +51,7 @@ export const FilterInputs = () => {
         <FilterAdultToggle />
       </div>
       <Button onClick={clearFilters} primary={true}>
-        Clear Filters
+        {t("clearFilters")}
       </Button>
     </div>
   );
