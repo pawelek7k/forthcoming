@@ -16,7 +16,7 @@ const CreatePage = () => {
         as="h1"
         className="text-3xl text-neutral-100 uppercase font-semibold"
       >
-        {t("create")}
+        {t("create.first")}
       </Heading>
       <CreateForm />
     </Section>
