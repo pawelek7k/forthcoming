@@ -2,6 +2,7 @@ import Notiflix from "notiflix";
 import { ChangeEvent, KeyboardEvent, useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { Tag } from "./Tag";
+import { useTranslations } from "next-intl";
 
 type TagType = {
   name: string;
@@ -12,6 +13,7 @@ type TagType = {
 export const Tags = ({ name, value = [], onChange }: TagType) => {
   const [inputValue, setInputValue] = useState("");
   const [words, setWords] = useState<string[]>(value);
+  const t = useTranslations("global");
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -50,7 +52,7 @@ export const Tags = ({ name, value = [], onChange }: TagType) => {
         htmlFor="tags"
         className="z-0 text-zinc-100 text-sm font-semibold uppercase flex items-center mb-2"
       >
-        Tags
+        {t("tags")}
       </label>
       <input
         type="text"
