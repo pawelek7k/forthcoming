@@ -1,3 +1,4 @@
+import { PremiumCard } from "@/app/components/PremiumCard";
 import { Section } from "@/app/components/Section";
 
 export const metadata = {
@@ -9,7 +10,7 @@ const NotesPage = () => {
   // const t = useTranslations("headings");
   return (
     <Section>
-      <h1>hejka</h1>
+      <PremiumCard />
     </Section>
   );
 };
