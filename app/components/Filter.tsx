@@ -6,6 +6,7 @@ import {
 } from "@/lib/redux/slices/booksSlice";
 import { RootState } from "@/lib/redux/store";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "./Button";
 import { DropdownMenu } from "./Dropdown";
@@ -16,6 +17,8 @@ import { UserProfile } from "./UserProfile";
 
 export const Filter = () => {
   const dispatch = useDispatch();
+  const t = useTranslations("global");
+
   const selectedLanguage = useSelector(
     (state: RootState) => state.books.selectedLanguage
   );
@@ -62,7 +65,7 @@ export const Filter = () => {
           <DropdownMenu onChange={handleGenreChange} />
           <div className="flex gap-2 items-center justify-between">
             <p className=" text-neutral-100 text-sm font-semibold uppercase">
-              Language of books
+              {t("langSwitch")}
             </p>
             <div className="flex items-center gap-2">
               <span className="text-sm">PL</span>
@@ -78,16 +81,16 @@ export const Filter = () => {
           </div>
           <div className="flex items-center justify-between mb-4">
             <p className="text-neutral-100 text-sm font-semibold uppercase">
-              For Adult
+              {t("adultChecker")}
             </p>
             <div className="flex items-center gap-2">
-              <span className="text-sm">NO</span>
+              <span className="text-sm uppercase">{t("no")}</span>
               <ToggleSwitch
                 name="forAdultToggle"
                 value={forAdult ? "on" : "off"}
                 onChange={() => dispatch(toggleForAdult())}
               />
-              <span className="text-sm">YES</span>
+              <span className="text-sm uppercase">{t("yes")}</span>
             </div>
           </div>
         </div>
