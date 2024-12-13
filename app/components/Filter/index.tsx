@@ -1,47 +1,11 @@
-import {
-  setSearchQuery,
-  setSelectedGenre,
-  setSelectedLanguage,
-  toggleForAdult,
-} from "@/lib/redux/slices/booksSlice";
-import { RootState } from "@/lib/redux/store";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
-import { useDispatch, useSelector } from "react-redux";
-import { Button } from "../Button";
-import { DropdownMenu } from "../Dropdown";
 import { Heading } from "../Heading";
-import { InputField } from "../InputField";
-import { ToggleSwitch } from "../ToggleSwitch";
+import { FilterInputs } from "./FilterInputs";
 import { UserProfile } from "../UserProfile";
+import { useTranslations } from "next-intl";
 
 export const Filter = () => {
-  const dispatch = useDispatch();
-  const t = useTranslations("global");
-
-  const selectedLanguage = useSelector(
-    (state: RootState) => state.books.selectedLanguage
-  );
-  const forAdult = useSelector((state: RootState) => state.books.forAdult);
-  const searchQuery = useSelector(
-    (state: RootState) => state.books.searchQuery
-  );
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setSearchQuery(e.target.value));
-  };
-
-  const handleGenreChange = (genre: string) => {
-    dispatch(setSelectedGenre(genre));
-  };
-
-  const clearFilters = () => {
-    dispatch(setSearchQuery(""));
-    dispatch(setSelectedGenre(null));
-    dispatch(setSelectedLanguage(null));
-    dispatch(toggleForAdult());
-  };
-
+  const t = useTranslations("filters");
   return (
     <motion.div
       className="h-screen bg-zinc-950 pt-20 p-6 flex-col flex justify-between"
@@ -52,51 +16,9 @@ export const Filter = () => {
     >
       <div>
         <Heading as="h2" className="text-2xl font-semibold text-zinc-100 mb-4">
-          Filter
+          {t("heading")}
         </Heading>
-        <InputField
-          id="filter-title"
-          onChange={handleInputChange}
-          placeholder="Enter a title"
-          value={searchQuery}
-          label="Enter a title"
-        />
-        <div className="flex justify-between flex-col mt-4 gap-2">
-          <DropdownMenu onChange={handleGenreChange} />
-          <div className="flex gap-2 items-center justify-between">
-            <p className=" text-neutral-100 text-sm font-semibold uppercase">
-              {t("langSwitch")}
-            </p>
-            <div className="flex items-center gap-2">
-              <span className="text-sm">PL</span>
-              <ToggleSwitch
-                name="languageToggle"
-                value={selectedLanguage || "eng"}
-                onValue="pl"
-                offValue="eng"
-                onChange={(value) => dispatch(setSelectedLanguage(value))}
-              />
-              <span className="text-sm">ENG</span>
-            </div>
-          </div>
-          <div className="flex items-center justify-between mb-4">
-            <p className="text-neutral-100 text-sm font-semibold uppercase">
-              {t("adultChecker")}
-            </p>
-            <div className="flex items-center gap-2">
-              <span className="text-sm uppercase">{t("no")}</span>
-              <ToggleSwitch
-                name="forAdultToggle"
-                value={forAdult ? "on" : "off"}
-                onChange={() => dispatch(toggleForAdult())}
-              />
-              <span className="text-sm uppercase">{t("yes")}</span>
-            </div>
-          </div>
-        </div>
-        <Button onClick={clearFilters} primary={true}>
-          Clear Filters
-        </Button>
+        <FilterInputs />
       </div>
       <UserProfile />
     </motion.div>
