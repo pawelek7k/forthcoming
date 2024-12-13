@@ -8,12 +8,12 @@ import { RootState } from "@/lib/redux/store";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useDispatch, useSelector } from "react-redux";
-import { Button } from "./Button";
-import { DropdownMenu } from "./Dropdown";
-import { Heading } from "./Heading";
-import { InputField } from "./InputField";
-import { ToggleSwitch } from "./ToggleSwitch";
-import { UserProfile } from "./UserProfile";
+import { Button } from "../Button";
+import { DropdownMenu } from "../Dropdown";
+import { Heading } from "../Heading";
+import { InputField } from "../InputField";
+import { ToggleSwitch } from "../ToggleSwitch";
+import { UserProfile } from "../UserProfile";
 
 export const Filter = () => {
   const dispatch = useDispatch();
