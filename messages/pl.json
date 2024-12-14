@@ -38,9 +38,10 @@
     "startReading": "Zacznij czytać"
   },
   "navigation": {
-    "create": "Stwórz",
+    "create": "Twórz",
     "library": "Biblioteka",
-    "logout": "Wyloguj"
+    "home": "Strona Główna",
+    "notes": "Notatki"
   },
   "filters": {
     "heading": "Filtry",

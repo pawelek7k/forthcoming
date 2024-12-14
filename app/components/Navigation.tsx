@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { Sling as Hamburger } from "hamburger-react";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { Filter } from "./Filter";
 import { LinkComponent as Link } from "./Link";
@@ -14,11 +15,12 @@ type LinkType = {
 
 export const Navigation = () => {
   const [isOpen, setOpen] = useState(false);
+  const t = useTranslations("navigation");
   const links: LinkType = [
-    { label: "Home", path: "/home" },
-    { label: "Create", path: "/myworks/create" },
-    { label: "Library", path: "/library" },
-    { label: "Notes", path: "/notes" },
+    { label: t("home"), path: "/home" },
+    { label: t("create"), path: "/myworks/create" },
+    { label: t("library"), path: "/library" },
+    { label: t("notes"), path: "/notes" },
   ];
 
   return (
