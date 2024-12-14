@@ -9,15 +9,13 @@ export const metadata = {
 
 const NotesPage = () => {
   return (
-    <div className="relative w-full h-screen">
+    <Section className="relative w-full h-screen">
       <ParticlesBackground />
 
-      <div style={{ position: "relative", zIndex: 1 }}>
-        <Section>
-          <PremiumCard />
-        </Section>
+      <div className="z-1 relative">
+        <PremiumCard />
       </div>
-    </div>
+    </Section>
   );
 };
 
