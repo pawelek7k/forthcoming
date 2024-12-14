@@ -59,5 +59,11 @@
       "paragraph": "Fill in the details below to add your book."
     },
     "library": "Your library!"
+  },
+  "premium": {
+    "heading": "Buy premium to save your golden thoughts.",
+    "paragraph": "You cannot access this page without a subscription.",
+    "button": "Buy premium",
+    "link": "Learn more"
   }
 }

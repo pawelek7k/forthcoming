@@ -59,5 +59,11 @@
       "paragraph": "Wypełnij formularz, by dodać książkę."
     },
     "library": "Twoja biblioteka!"
+  },
+  "premium": {
+    "heading": "Kup premium, by zapisywać swoje złote myśli.",
+    "paragraph": "Nie możesz otworzyć tej strony bez subskrypcji.",
+    "button": "Kup premium",
+    "link": "Dowiedz się więcej"
   }
 }
