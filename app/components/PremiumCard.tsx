@@ -14,7 +14,7 @@ export const PremiumCardModal = () => {
   return (
     <>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+        <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/50">
           <div
             className="border border-zinc-950 w-max p-6 rounded-md bg-dark-primary-bg shadow-md flex flex-col items-center justify-center"
             onClick={(e) => e.stopPropagation()}
