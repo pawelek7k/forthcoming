@@ -1,7 +1,6 @@
-import { ObjectId } from "mongodb";
 
 export type Book = {
-    _id: ObjectId;
+    _id: string;
     // id: string;
     title: string;
     userId: string;

@@ -29,6 +29,7 @@ export async function getUserLibrary(): Promise<{ books: Book[]; userLibrary: st
         genre: book.genre,
         tags: book.tags,
         lang: book.lang,
+        date: book.date,
     }));
 
     return { books, userLibrary: bookIds };

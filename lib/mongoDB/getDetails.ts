@@ -13,7 +13,7 @@ export async function getBookDetails(bookId: string): Promise<Book | null> {
         if (!book) return null;
 
         return {
-            _id: book._id,
+            _id: book._id.toString(),
             title: book.title,
             userId: book.userId,
             date: book.date,

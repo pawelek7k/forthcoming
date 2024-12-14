@@ -1,6 +1,6 @@
 import type { Book } from "@/types/book";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
 type BooksStateType = {
     books: Book[];
@@ -29,7 +29,8 @@ export const fetchBooks = createAsyncThunk(
             const response = await axios.get('/api/book/get');
             return response.data;
         } catch (err) {
-            return rejectWithValue(err.response?.data || 'Failed to fetch books');
+            const error = err as AxiosError;
+            return rejectWithValue(error.response?.data || 'Failed to fetch books');
         }
     }
 );
@@ -41,7 +42,8 @@ export const addBook = createAsyncThunk(
             const response = await axios.post('/api/book/add', bookData);
             return response.data;
         } catch (err) {
-            return rejectWithValue(err.response?.data || 'Failed to add book');
+            const error = err as AxiosError;
+            return rejectWithValue(error.response?.data || 'Failed to add book');
         }
     }
 );
