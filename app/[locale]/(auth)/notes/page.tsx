@@ -1,3 +1,4 @@
+import { ParticlesBackground } from "@/app/components/ParticlesBackground";
 import { PremiumCard } from "@/app/components/PremiumCard";
 import { Section } from "@/app/components/Section";
 
@@ -7,11 +8,16 @@ export const metadata = {
 };
 
 const NotesPage = () => {
-  // const t = useTranslations("headings");
   return (
-    <Section>
-      <PremiumCard />
-    </Section>
+    <div className="relative w-full h-screen">
+      <ParticlesBackground />
+
+      <div style={{ position: "relative", zIndex: 1 }}>
+        <Section>
+          <PremiumCard />
+        </Section>
+      </div>
+    </div>
   );
 };
 
