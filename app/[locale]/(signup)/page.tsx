@@ -113,7 +113,7 @@ const Login = () => {
       <div className="flex items-center gap-4 mt-10">
         <p className="text-neutral-100">or</p>
       </div>
-      <div className="mt-10">
+      <div className="mt-10 z-0">
         <Button primary={true} onClick={toggleForm}>
           {isLogin ? loginT("switch") : signupT("switch")}
         </Button>
