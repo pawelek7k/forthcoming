@@ -1,5 +1,5 @@
 import { ParticlesBackground } from "@/app/components/ParticlesBackground";
-import { PremiumCard } from "@/app/components/PremiumCard";
+import { PremiumCardModal } from "@/app/components/PremiumCard";
 import { Section } from "@/app/components/Section";
 
 export const metadata = {
@@ -11,7 +11,7 @@ const NotesPage = () => {
   return (
     <Section className="relative w-full h-screen">
       <ParticlesBackground />
-      <PremiumCard />
+      <PremiumCardModal />
     </Section>
   );
 };
