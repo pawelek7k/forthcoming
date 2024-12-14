@@ -11,10 +11,7 @@ const NotesPage = () => {
   return (
     <Section className="relative w-full h-screen">
       <ParticlesBackground />
-
-      <div className="z-1 relative">
-        <PremiumCard />
-      </div>
+      <PremiumCard />
     </Section>
   );
 };
