@@ -3,6 +3,7 @@
 import useMediaQuery from "@/lib/useMediaQuery";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
+import { Logo } from "../Logo";
 import { DesktopMenu } from "./DesktopMenu";
 import { MobileMenu } from "./MobileMenu";
 
@@ -23,10 +24,15 @@ const NavigationWrapper = () => {
 
   const isMobile = useMediaQuery("(max-width: 768px)");
 
-  return isMobile ? (
-    <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} links={links} />
-  ) : (
-    <DesktopMenu isOpen={isOpen} setIsOpen={setIsOpen} links={links} />
+  return (
+    <header>
+      <Logo />
+      {isMobile ? (
+        <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} links={links} />
+      ) : (
+        <DesktopMenu isOpen={isOpen} setIsOpen={setIsOpen} links={links} />
+      )}
+    </header>
   );
 };
 
