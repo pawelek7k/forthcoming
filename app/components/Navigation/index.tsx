@@ -1,18 +1,24 @@
 "use client";
 
+import useMediaQuery from "@/lib/useMediaQuery";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { DesktopMenu } from "./DesktopMenu";
 import { MobileMenu } from "./MobileMenu";
-import useMediaQuery from "@/lib/useMediaQuery";
+
+type LinkType = {
+  label: string;
+  path: string;
+}[];
 
 const NavigationWrapper = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const links = [
-    { label: "Home", path: "/home" },
-    { label: "Create", path: "/myworks/create" },
-    { label: "Library", path: "/library" },
-    { label: "Notes", path: "/notes" },
+  const t = useTranslations("navigation");
+  const links: LinkType = [
+    { label: t("home"), path: "/home" },
+    { label: t("create"), path: "/myworks/create" },
+    { label: t("library"), path: "/library" },
+    { label: t("notes"), path: "/notes" },
   ];
 
   const isMobile = useMediaQuery("(max-width: 768px)");
