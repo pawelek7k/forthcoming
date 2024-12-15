@@ -7,7 +7,7 @@ import { Logo } from "../Logo";
 import { DesktopMenu } from "./DesktopMenu";
 import { MobileMenu } from "./MobileMenu";
 
-type LinkType = {
+export type LinkType = {
   label: string;
   path: string;
 }[];

@@ -4,19 +4,16 @@ import { AnimatePresence, motion } from "framer-motion";
 import Hamburger from "hamburger-react";
 import { Filter } from "../Filter";
 import { LinkComponent as Link } from "../Link";
+import { Dispatch, SetStateAction } from "react";
+import { LinkType } from ".";
 
-type LinkType = {
-  label: string;
-  path: string;
-}[];
-
-type DesktopMenuProps = {
+export type MenuProps = {
   isOpen: boolean;
   links: LinkType;
-  setIsOpen: () => void;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 };
 
-export const DesktopMenu = ({ isOpen, setIsOpen, links }: DesktopMenuProps) => {
+export const DesktopMenu = ({ isOpen, setIsOpen, links }: MenuProps) => {
   return (
     <>
       <div className="bg-zinc-100 rounded-l-full border border-rose-950 text-zinc-950 p-1 px-12 w-full flex justify-between z-40">

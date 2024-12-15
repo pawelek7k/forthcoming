@@ -2,22 +2,11 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import Hamburger from "hamburger-react";
-import { Dispatch, SetStateAction } from "react";
 import { LinkComponent as Link } from "../Link";
 import { Logo } from "../Logo";
+import { MenuProps } from "./DesktopMenu";
 
-type LinkType = {
-  label: string;
-  path: string;
-}[];
-
-type MobileMenuProps = {
-  isOpen: boolean;
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
-  links: LinkType;
-};
-
-export const MobileMenu = ({ isOpen, setIsOpen, links }: MobileMenuProps) => {
+export const MobileMenu = ({ isOpen, setIsOpen, links }: MenuProps) => {
   return (
     <>
       <div className="bg-zinc-100 rounded-l-full border border-rose-950 text-zinc-950 p-1 px-12 w-full flex justify-between z-40">
