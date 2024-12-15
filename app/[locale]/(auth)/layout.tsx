@@ -1,7 +1,7 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import localFont from "next/font/local";
-import { Navigation } from "../../components/Navigation";
+import Navigation from "../../components/Navigation";
 import "../../globals.css";
 import { NextAuthProvider } from "./NextAuthProvider";
 import { ReduxProvider } from "./ReduxProvider";

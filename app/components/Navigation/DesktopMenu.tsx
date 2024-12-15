@@ -1,28 +1,23 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Sling as Hamburger } from "hamburger-react";
-import { useTranslations } from "next-intl";
-import { useState } from "react";
-import { Filter } from "./Filter";
-import { LinkComponent as Link } from "./Link";
-import { Logo } from "./Logo";
+import { LinkComponent as Link } from "../Link";
+import Hamburger from "hamburger-react";
+import { Filter } from "../Filter";
+import { Logo } from "../Logo";
 
 type LinkType = {
   label: string;
   path: string;
 }[];
 
-export const Navigation = () => {
-  const [isOpen, setOpen] = useState(false);
-  const t = useTranslations("navigation");
-  const links: LinkType = [
-    { label: t("home"), path: "/home" },
-    { label: t("create"), path: "/myworks/create" },
-    { label: t("library"), path: "/library" },
-    { label: t("notes"), path: "/notes" },
-  ];
+type DesktopMenuProps = {
+  isOpen: boolean;
+  links: LinkType;
+  setIsOpen: () => void;
+};
 
+export const DesktopMenu = ({ isOpen, setIsOpen, links }: DesktopMenuProps) => {
   return (
     <>
       <header className="flex justify-around w-full fixed z-40 backdrop-blur-md rounded-b-lg top-0 items-center shadow-lg pl-12 gap-12">
@@ -41,7 +36,7 @@ export const Navigation = () => {
             <Hamburger
               size={20}
               toggled={isOpen}
-              toggle={setOpen}
+              toggle={setIsOpen}
               color="#f4f4f5"
             />
           </div>
