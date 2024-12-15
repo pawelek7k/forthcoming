@@ -20,13 +20,15 @@ type MobileMenuProps = {
 export const MobileMenu = ({ isOpen, setIsOpen, links }: MobileMenuProps) => {
   return (
     <>
-      <div className="rounded-full bg-zinc-950 z-50 fixed right-2">
-        <Hamburger
-          size={20}
-          toggled={isOpen}
-          toggle={setIsOpen}
-          color="#f4f4f5"
-        />
+      <div className="bg-zinc-100 rounded-l-full border border-rose-950 text-zinc-950 p-1 px-12 w-full flex justify-between z-40">
+        <div className="rounded-full bg-zinc-950 z-50">
+          <Hamburger
+            size={20}
+            toggled={isOpen}
+            toggle={setIsOpen}
+            color="#f4f4f5"
+          />
+        </div>
       </div>
       <AnimatePresence>
         {isOpen && (
@@ -39,7 +41,7 @@ export const MobileMenu = ({ isOpen, setIsOpen, links }: MobileMenuProps) => {
               stiffness: 120,
               damping: 20,
             }}
-            className="fixed top-0 right-0 w-full h-screen bg-zinc-950 z-30 sm:w-[300px] p-8"
+            className="fixed top-0 right-0 w-full h-screen bg-zinc-950 z-30 sm:w-[300px] p-8 pt-24"
           >
             <div className="flex flex-col h-full text-zinc-100 p-6">
               <nav>

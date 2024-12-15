@@ -25,7 +25,7 @@ const NavigationWrapper = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
-    <header>
+    <header className="flex justify-around w-full fixed z-40 backdrop-blur-md rounded-b-lg top-0 items-center shadow-lg pl-12 gap-12">
       <Logo />
       {isMobile ? (
         <MobileMenu isOpen={isOpen} setIsOpen={setIsOpen} links={links} />
