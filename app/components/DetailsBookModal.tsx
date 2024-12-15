@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 import { Heading } from "./Heading";
 import { Buttons } from "./ModalBtns";
+import { Overlay } from "./Overlay";
 import { Tag } from "./Tag";
 
 type ModalType = {
@@ -35,7 +36,7 @@ export const DetailsBookModal = ({ isOpen, onClose, book }: ModalType) => {
 
   return (
     <>
-      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 dark:bg-zinc-900/50">
+      <Overlay>
         <div className="bg-white/70 backdrop-blur-md md:p-6 rounded-md justify-center w-full md:w-[50rem] dark:bg-black/70">
           <button
             onClick={onClose}
@@ -102,7 +103,7 @@ export const DetailsBookModal = ({ isOpen, onClose, book }: ModalType) => {
             </div>
           </div>
         </div>
-      </div>
+      </Overlay>
     </>
   );
 };
