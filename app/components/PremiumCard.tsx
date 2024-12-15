@@ -6,6 +6,7 @@ import { useState } from "react";
 import { MdOutlineWorkspacePremium } from "react-icons/md";
 import { Button } from "./Button";
 import { LinkComponent } from "./Link";
+import { Overlay } from "./Overlay";
 
 export const PremiumCardModal = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -14,7 +15,7 @@ export const PremiumCardModal = () => {
   return (
     <>
       {isOpen && (
-        <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/50">
+        <Overlay>
           <div
             className="border border-zinc-950 w-max p-6 rounded-md bg-dark-primary-bg shadow-md flex flex-col items-center justify-center"
             onClick={(e) => e.stopPropagation()}
@@ -37,7 +38,7 @@ export const PremiumCardModal = () => {
               {t("button")}
             </Button>
           </div>
-        </div>
+        </Overlay>
       )}
     </>
   );
