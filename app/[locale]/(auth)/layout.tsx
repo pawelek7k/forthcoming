@@ -23,8 +23,7 @@ export default async function RootLayout(
     params: { locale: string };
   }>
 ) {
-  const params = await props.params;
-
+  const { params } = props;
   const { locale } = params;
 
   const { children } = props;
