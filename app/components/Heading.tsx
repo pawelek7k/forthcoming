@@ -1,24 +1,36 @@
-import type { ChildrenType } from "@/types/children";
-import type { ClassNameType } from "@/types/className";
+import { ChildrenType } from "@/types/children";
 import classNames from "classnames";
-import React from "react";
+import { useTranslations } from "next-intl";
+import React, { useMemo } from "react";
 
 type HeadingType = {
   as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-  children: ChildrenType;
-  className?: ClassNameType;
+  className?: string;
+  namespace?: string;
+  children?: ChildrenType;
 } & React.HTMLAttributes<HTMLHeadingElement>;
 
 export const Heading = ({
-  as = "h1",
-  children,
+  as: Component = "h1",
   className,
+  namespace,
+  children,
   ...rest
 }: HeadingType) => {
-  const Component = as;
+  const t = useTranslations();
+
+  const translatedMessage = useMemo(() => {
+    try {
+      return namespace ? t(namespace) : null;
+    } catch (error) {
+      console.warn(`Missing translation for key: ${namespace}`, error);
+      return null;
+    }
+  }, [namespace, t]);
+
   return (
     <Component className={classNames(className)} {...rest}>
-      {children}
+      {translatedMessage || children || null}
     </Component>
   );
 };

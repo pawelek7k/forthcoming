@@ -21,7 +21,7 @@ const LibraryPage = async () => {
 
   return (
     <Section>
-      <Heading as="h1">Your Library!</Heading>
+      <Heading as="h1" namespace="headings.library" />
       <Suspense fallback={<Loader />}>
         <RenderBooks books={books} userLibrary={userLibrary} />
       </Suspense>
