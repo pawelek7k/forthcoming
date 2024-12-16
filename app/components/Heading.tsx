@@ -20,17 +20,12 @@ export const Heading = ({
   const t = useTranslations();
 
   const translatedMessage = useMemo(() => {
-    try {
-      return namespace ? t(namespace) : null;
-    } catch (error) {
-      console.warn(`Missing translation for key: ${namespace}`, error);
-      return null;
-    }
+    return namespace ? t(namespace) : "";
   }, [namespace, t]);
 
   return (
     <Component className={classNames(className)} {...rest}>
-      {translatedMessage || children || null}
+      {translatedMessage && `${translatedMessage} `} {children}
     </Component>
   );
 };
