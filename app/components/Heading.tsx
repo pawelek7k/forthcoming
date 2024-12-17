@@ -1,4 +1,4 @@
-import { ChildrenType } from "@/types/children";
+import type { ChildrenType } from "@/types/children";
 import classNames from "classnames";
 import { useTranslations } from "next-intl";
 import React, { useMemo } from "react";
