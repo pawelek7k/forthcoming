@@ -6,8 +6,9 @@ import { useState } from "react";
 import { MdOutlineWorkspacePremium } from "react-icons/md";
 import { Button } from "./Button";
 import { Heading } from "./Heading";
-import { LinkComponent } from "./Link";
+import { LinkComponent as Link } from "./Link";
 import { Overlay } from "./Overlay";
+import { Paragraph } from "./Paragraph";
 
 export const PremiumCardModal = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -26,13 +27,14 @@ export const PremiumCardModal = () => {
               className="text-lg font-bold text-center"
               namespace="premium.heading"
             />
-            <p>{t("paragraph")}</p>
-            <LinkComponent
+            <Paragraph namespace="premium.paragraph" />
+            <Link
               to="/"
               className="hover-effect flex items-center gap-2 text-center justify-center font-semibold mb-4"
+              namespace="premium.link"
             >
-              {t("link")} <MdOutlineWorkspacePremium />
-            </LinkComponent>
+              <MdOutlineWorkspacePremium />
+            </Link>
             <Image
               src="/images/premium.png"
               width={300}
