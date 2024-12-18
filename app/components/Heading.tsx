@@ -1,7 +1,8 @@
+import { useTranslatedMessage } from "@/hooks/getTranslatedMessage";
 import type { ChildrenType } from "@/types/children";
 import classNames from "classnames";
 import { useTranslations } from "next-intl";
-import React, { useMemo } from "react";
+import React from "react";
 
 type HeadingType = {
   as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
@@ -18,14 +19,11 @@ export const Heading = ({
   ...rest
 }: HeadingType) => {
   const t = useTranslations();
-
-  const translatedMessage = useMemo(() => {
-    return namespace ? t(namespace) : "";
-  }, [namespace, t]);
-
+  const translatedMessage = useTranslatedMessage(namespace, t);
   return (
     <Component className={classNames(className)} {...rest}>
-      {translatedMessage && `${translatedMessage} `} {children}
+      {translatedMessage && `${translatedMessage} `}
+      {children}
     </Component>
   );
 };
