@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { MdOutlineWorkspacePremium } from "react-icons/md";
 import { Button } from "./Button";
+import { Heading } from "./Heading";
 import { LinkComponent } from "./Link";
 import { Overlay } from "./Overlay";
 
@@ -20,7 +21,11 @@ export const PremiumCardModal = () => {
             className="border border-zinc-950 w-max p-6 rounded-md bg-dark-primary-bg shadow-md flex flex-col items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 className="text-lg font-bold text-center">{t("heading")}</h2>
+            <Heading
+              as="h2"
+              className="text-lg font-bold text-center"
+              namespace="premium.heading"
+            />
             <p>{t("paragraph")}</p>
             <LinkComponent
               to="/"
