@@ -1,9 +1,12 @@
+import { useTranslatedMessage } from "@/hooks/getTranslatedMessage";
 import type { ChildrenType } from "@/types/children";
 import type { ClassNameType } from "@/types/className";
 import classNames from "classnames";
+import { useTranslations } from "next-intl";
 
 type ButtonType = {
-  children: ChildrenType;
+  children?: ChildrenType;
+  namespace?: string;
   className?: ClassNameType;
   primary?: boolean;
   success?: boolean;
@@ -15,6 +18,7 @@ type ButtonType = {
 
 export const Button = ({
   children,
+  namespace,
   className,
   primary,
   success,
@@ -24,6 +28,8 @@ export const Button = ({
   isDisabled,
   ...rest
 }: ButtonType) => {
+  const t = useTranslations();
+  const translatedMessage = useTranslatedMessage(namespace, t);
   const classes = classNames(className, "flex items-center px-3 py-1.5", {
     btn: primary,
     "btn bg-sky-700 before:bg-sky-900 border-sky-600 text-sky-100": success,
@@ -40,6 +46,7 @@ export const Button = ({
       className={classes}
       disabled={isDisabled}
     >
+      {translatedMessage && `${translatedMessage} `}
       {children}
     </button>
   );
