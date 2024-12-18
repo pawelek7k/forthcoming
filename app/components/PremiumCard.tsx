@@ -1,6 +1,4 @@
 "use client";
-
-import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
 import { MdOutlineWorkspacePremium } from "react-icons/md";
@@ -12,7 +10,6 @@ import { Paragraph } from "./Paragraph";
 
 export const PremiumCardModal = () => {
   const [isOpen, setIsOpen] = useState(true);
-  const t = useTranslations("premium");
 
   return (
     <>
@@ -41,9 +38,11 @@ export const PremiumCardModal = () => {
               height={300}
               alt="premium img"
             />
-            <Button danger={true} onClick={() => setIsOpen(false)}>
-              {t("button")}
-            </Button>
+            <Button
+              danger={true}
+              onClick={() => setIsOpen(false)}
+              namespace="premium.button"
+            />
           </div>
         </Overlay>
       )}
