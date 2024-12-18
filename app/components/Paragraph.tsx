@@ -1,7 +1,7 @@
+import { useTranslatedMessage } from "@/hooks/getTranslatedMessage";
 import type { ChildrenType } from "@/types/children";
 import classNames from "classnames";
 import { useTranslations } from "next-intl";
-import { useMemo } from "react";
 
 type ParagraphProps = {
   children?: ChildrenType;
@@ -15,17 +15,14 @@ export const Paragraph = ({
   namespace,
 }: ParagraphProps) => {
   const t = useTranslations();
+  const translatedMessage = useTranslatedMessage(namespace, t);
 
   const paragraphClasses = classNames("text-sm sm:text-base", className);
 
-  const translatedMessage = useMemo(() => {
-    return namespace ? t(namespace) : "";
-  }, [namespace, t]);
-
   return (
     <p className={paragraphClasses}>
-      {" "}
-      {translatedMessage && `${translatedMessage} `} {children}
+      {translatedMessage && `${translatedMessage} `}
+      {children}
     </p>
   );
 };
