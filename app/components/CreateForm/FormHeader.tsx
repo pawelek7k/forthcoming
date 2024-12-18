@@ -1,8 +1,7 @@
-import { useTranslations } from "next-intl";
 import { Heading } from "../Heading";
+import { Paragraph } from "../Paragraph";
 
 export const FormHeader = () => {
-  const t = useTranslations("headings");
   return (
     <div className="text-center mb-6">
       <Heading
@@ -10,7 +9,7 @@ export const FormHeader = () => {
         className="text-xl font-bold"
         namespace="headings.create.second"
       />
-      <p className="text-sm ">{t("create.paragraph")}</p>
+      <Paragraph className="text-sm" namespace="headings.create.paragraph" />
     </div>
   );
 };
