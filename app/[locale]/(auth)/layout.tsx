@@ -24,8 +24,7 @@ export default async function RootLayout(
   }>
 ) {
   const { params } = props;
-  const { locale } = params;
-
+  const { locale } = await params;
   const { children } = props;
 
   const messages = await getMessages();
