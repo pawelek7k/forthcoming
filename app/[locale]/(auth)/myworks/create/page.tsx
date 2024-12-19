@@ -12,7 +12,7 @@ const CreatePage = () => {
     <Section>
       <Heading
         as="h1"
-        className="text-3xl text-neutral-100 uppercase font-semibold"
+        className="text-xl sm:text-3xl text-neutral-100 uppercase font-semibold"
         namespace="headings.create.first"
       />
       <CreateForm />
