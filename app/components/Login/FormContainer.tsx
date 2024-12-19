@@ -1,4 +1,4 @@
-import { LoginForm } from ".";
+import { LoginForm } from "./Login";
 import { SignupForm } from "./Signup";
 
 type FormContainerTypes = {

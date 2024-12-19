@@ -1,69 +1,116 @@
+"use client";
+
+import { Loader } from "@/app/components/Loader";
+import { FormContainer } from "@/app/components/Login/FormContainer";
+import { ToggleFormButton } from "@/app/components/Login/ToggleFormButton";
+import { Section } from "@/app/components/Section";
+import { createUser } from "@/lib/signup/createUser";
+import { useRouter } from "@/navigation";
+import { signIn, useSession } from "next-auth/react";
 import { useTranslations } from "next-intl";
-import React from "react";
-import { Button } from "../Button";
-import { InputField } from "../InputField";
-import { Socials } from "./Socials";
-import { GoogleBtn } from "../GoogleBtn";
+import Notiflix from "notiflix";
+import { useState } from "react";
 
-type LoginFormType = {
-  formData: {
-    email: string;
-    username: string;
-    password: string;
+export const Login = () => {
+  const [isLogin, setIsLogin] = useState(true);
+  const [formData, setFormData] = useState({
+    email: "john.doe99@example.com",
+    username: "user123",
+    password: "Password1",
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+  const loginT = useTranslations("login");
+  const signupT = useTranslations("signup");
+  const { data: session } = useSession();
+
+  if (session) router.push("/home");
+
+  const toggleForm = () => setIsLogin((prev) => !prev);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
-  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  submitHandler: (e: React.FormEvent<HTMLFormElement>) => void;
-  isLoading: boolean;
-};
 
-export const LoginForm = ({
-  formData,
-  handleChange,
-  submitHandler,
-  isLoading,
-}: LoginFormType) => {
-  const t = useTranslations("login");
+  const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    if (isLogin) {
+      try {
+        const result = await signIn("credentials", {
+          redirect: false,
+          email: formData.email,
+          password: formData.password,
+        });
+
+        if (result?.error) {
+          Notiflix.Notify.failure("Invalid email or password");
+        } else {
+          Notiflix.Notify.success("Logged in correctly");
+          router.push("/home");
+        }
+      } catch (err) {
+        const errorMessage =
+          (err as Error)?.message || "An unknown error occurred.";
+        Notiflix.Notify.failure(errorMessage);
+      } finally {
+        setIsLoading(false);
+      }
+    } else {
+      try {
+        const result = await createUser(
+          formData.email,
+          formData.username,
+          formData.password
+        );
+        console.log("User created:", result);
+
+        const signInResult = await signIn("credentials", {
+          redirect: false,
+          email: formData.email,
+          password: formData.password,
+        });
+
+        if (signInResult?.error) {
+          Notiflix.Notify.failure("Error during login after registration.");
+        } else {
+          Notiflix.Notify.success("User registered and logged in successfully");
+          router.push("/home");
+        }
+      } catch (err) {
+        const errorMessage =
+          (err as Error)?.message || "An unknown error occurred.";
+        Notiflix.Notify.failure(errorMessage);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+  };
+
   return (
-    <div className="bg-zinc-950/90 backdrop-blur-md p-8 rounded-lg shadow-lg w-full max-w-md mx-auto mt-20 shadow-rose-950">
-      <h1 className="text-2xl font-semibold text-neutral-100 text-center mb-4">
-        {t("heading")}
-      </h1>
-      <p className="text-zinc-950 shadow-zinc-100 bg-zinc-100 p-1 rounded-full shadow-lg text-center mb-6 font-semibold text-sm uppercase">
-        {t("paragraph")}
-      </p>
-      <form onSubmit={submitHandler} className="flex flex-col gap-6">
-        <InputField
-          id="email"
-          name="email"
-          type="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder={t("emailPlaceholder")}
-          autoComplete="email"
-          label={t("emailLabel")}
-        />
-        <InputField
-          id="password"
-          name="password"
-          type="password"
-          value={formData.password}
-          onChange={handleChange}
-          placeholder={t("passwordPlaceholder")}
-          autoComplete="current-password"
-          label={t("passwordLabel")}
-        />
-        <ul className="flex flex-col gap-4">
-          <li>
-            <Button primary={true} isDisabled={isLoading}>
-              {t("button")}
-            </Button>
-          </li>
-          <li>
-            <GoogleBtn />
-          </li>
-        </ul>
-      </form>
-      <Socials />
-    </div>
+    <Section className="h-screen container mx-auto flex flex-col justify-center items-center">
+      <FormContainer
+        isLogin={isLogin}
+        formData={formData}
+        handleChange={handleChange}
+        submitHandler={submitHandler}
+        isLoading={isLoading}
+      />
+      <div className="flex items-center gap-4 mt-10">
+        <p className="text-neutral-100">or</p>
+      </div>
+      <ToggleFormButton
+        isLogin={isLogin}
+        toggleForm={toggleForm}
+        loginT={loginT}
+        signupT={signupT}
+      />
+      {isLoading && <Loader />}
+    </Section>
   );
 };
