@@ -1,16 +1,15 @@
 "use client";
 
+import { Loader } from "@/app/components/Loader";
+import { FormContainer } from "@/app/components/Login/FormContainer";
+import { ToggleFormButton } from "@/app/components/Login/ToggleFormButton";
+import { Section } from "@/app/components/Section";
 import { createUser } from "@/lib/signup/createUser";
 import { useRouter } from "@/navigation";
 import { signIn, useSession } from "next-auth/react";
 import { useTranslations } from "next-intl";
 import Notiflix from "notiflix";
 import { useState } from "react";
-import { Button } from "../../components/Button";
-import { LoginForm } from "../../components/login/Login";
-import { SignupForm } from "../../components/login/Signup";
-import { Section } from "@/app/components/Section";
-import { Loader } from "@/app/components/Loader";
 
 const Login = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -95,29 +94,22 @@ const Login = () => {
 
   return (
     <Section className="h-screen container mx-auto flex flex-col justify-center items-center">
-      {isLogin ? (
-        <LoginForm
-          formData={formData}
-          handleChange={handleChange}
-          submitHandler={submitHandler}
-          isLoading={isLoading}
-        />
-      ) : (
-        <SignupForm
-          formData={formData}
-          handleChange={handleChange}
-          submitHandler={submitHandler}
-          isLoading={isLoading}
-        />
-      )}
+      <FormContainer
+        isLogin={isLogin}
+        formData={formData}
+        handleChange={handleChange}
+        submitHandler={submitHandler}
+        isLoading={isLoading}
+      />
       <div className="flex items-center gap-4 mt-10">
         <p className="text-neutral-100">or</p>
       </div>
-      <div className="mt-10 z-0">
-        <Button primary={true} onClick={toggleForm}>
-          {isLogin ? loginT("switch") : signupT("switch")}
-        </Button>
-      </div>
+      <ToggleFormButton
+        isLogin={isLogin}
+        toggleForm={toggleForm}
+        loginT={loginT}
+        signupT={signupT}
+      />
       {isLoading && <Loader />}
     </Section>
   );

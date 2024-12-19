@@ -1,5 +1,5 @@
 import { Heading } from "@/app/components/Heading";
-import { Socials } from "@/app/components/login/Socials";
+import { Socials } from "@/app/components/Login/Socials";
 import { Section } from "@/app/components/Section";
 import { getBookDetails } from "@/lib/mongoDB/getDetails";
 import Image from "next/legacy/image";
