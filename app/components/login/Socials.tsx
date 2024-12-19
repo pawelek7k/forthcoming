@@ -21,7 +21,7 @@ export const socials: socialsType[] = [
   },
 ];
 
-export const Socials: React.FC = () => {
+export const Socials = () => {
   return (
     <ul className="flex gap-10 md:items-center md:mt-10 mb-10 md:mb-0 justify-center mt-4">
       {socials.map((social) => (
