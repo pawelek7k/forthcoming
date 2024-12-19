@@ -7,6 +7,7 @@ import { Heading } from "./Heading";
 import { Buttons } from "./ModalBtns";
 import { Overlay } from "./Overlay";
 import { Tag } from "./Tag";
+import { Paragraph } from "./Paragraph";
 
 type ModalType = {
   isOpen: boolean;
@@ -68,9 +69,7 @@ export const DetailsBookModal = ({ isOpen, onClose, book }: ModalType) => {
                 <Heading as="h5" className="font-semibold">
                   {t("description")}:
                 </Heading>
-                <p className="text-gray-700 dark:text-neutral-100">
-                  {book.description}
-                </p>
+                <Paragraph>{book.description}</Paragraph>
               </div>
               <div className="flex justify-between">
                 <div className="flex gap-2">
