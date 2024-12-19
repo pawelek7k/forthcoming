@@ -6,6 +6,7 @@ import { useCallback, useState } from "react";
 import { IoTrashBin } from "react-icons/io5";
 import { Cover } from "./Cover";
 import { Heading } from "./Heading";
+import { Paragraph } from "./Paragraph";
 
 export const BookItem = ({
   book,
@@ -52,7 +53,7 @@ export const BookItem = ({
             <Heading as="h4">For adult:</Heading>
             <span className="text-sm">{book.forAdult ? "YES" : "NO"}</span>
           </div>
-          <p className="text-sm md:text-base">{book.description}</p>
+          <Paragraph>{book.description}</Paragraph>
         </div>
       </div>
       {isInLibrary && (
