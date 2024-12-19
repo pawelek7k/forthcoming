@@ -21,7 +21,11 @@ const LibraryPage = async () => {
 
   return (
     <Section>
-      <Heading as="h1" namespace="headings.library" />
+      <Heading
+        as="h1"
+        namespace="headings.library"
+        className="text-xl sm:text-3xl text-neutral-100 uppercase font-semibold"
+      />
       <Suspense fallback={<Loader />}>
         <RenderBooks books={books} userLibrary={userLibrary} />
       </Suspense>
