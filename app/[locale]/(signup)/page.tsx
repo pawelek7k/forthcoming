@@ -1,3 +1,4 @@
+import { Footer } from "@/app/components/Footer";
 import { Login } from "@/app/components/Login";
 
 export const metadata = {
@@ -5,7 +6,12 @@ export const metadata = {
   description: "Login to access your account",
 };
 const LoginPage = () => {
-  return <Login />;
+  return (
+    <>
+      <Login />
+      <Footer />
+    </>
+  );
 };
 
 export default LoginPage;
