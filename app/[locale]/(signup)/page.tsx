@@ -9,7 +9,7 @@ const LoginPage = () => {
   return (
     <>
       <Login />
-      <Footer />
+      <Footer className="bg-gradient-to-t to-zinc-950 from-rose-950" />
     </>
   );
 };

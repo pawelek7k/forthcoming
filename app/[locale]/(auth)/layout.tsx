@@ -1,3 +1,4 @@
+import { Footer } from "@/app/components/Footer";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import localFont from "next/font/local";
@@ -38,6 +39,7 @@ export default async function RootLayout(
             <NextAuthProvider>
               <Navigation />
               <main className="min-h-screen">{children}</main>
+              <Footer className="border-top-rose-950" />
             </NextAuthProvider>
           </NextIntlClientProvider>
         </body>

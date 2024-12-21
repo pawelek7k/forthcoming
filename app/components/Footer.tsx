@@ -1,8 +1,14 @@
+import classNames from "classnames";
 import { Paragraph } from "./Paragraph";
 
-export const Footer = () => {
+type FooterType = {
+  className?: string;
+};
+
+export const Footer = ({ className }: FooterType) => {
+  const classes = classNames("p-2", className);
   return (
-    <footer className="bg-gradient-to-t to-zinc-950 from-rose-950 p-4">
+    <footer className={classes}>
       <Paragraph
         namespace="footer.copyright"
         className="text-center text-zinc-100"
