@@ -66,5 +66,8 @@
     "paragraph": "You cannot access this page without a subscription.",
     "button": "Buy premium",
     "link": "Learn more"
+  },
+  "footer": {
+    "copyright": "© 2024 Future. All rights reserved."
   }
 }

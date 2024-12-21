@@ -66,5 +66,8 @@
     "paragraph": "Nie możesz otworzyć tej strony bez subskrypcji.",
     "button": "Kup premium",
     "link": "Dowiedz się więcej"
+  },
+  "footer": {
+    "copyright": "© 2024 Future. Wszelkie prawa zastrzeżone."
   }
 }
