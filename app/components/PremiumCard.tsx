@@ -7,10 +7,10 @@ import { LinkComponent as Link } from "./Link";
 import { Overlay } from "./Overlay";
 import { Paragraph } from "./Paragraph";
 
-interface PremiumCardModalTypes {
+type PremiumCardModalTypes = {
   onClose: () => void;
   onProceed: () => void;
-}
+};
 
 export const PremiumCardModal = ({
   onClose,
