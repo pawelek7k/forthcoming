@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { Button } from "./Button";
 import { Overlay } from "./Overlay";
 
-interface SubscriptionModalTypes {
+type SubscriptionModalTypes = {
   isOpen: boolean;
   onClose: () => void;
   onSubscribe: () => void;
-}
+};
 
 export const SubscriptionModal = ({
   isOpen,
