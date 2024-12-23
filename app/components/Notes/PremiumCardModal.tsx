@@ -1,21 +1,22 @@
 "use client";
+import React from "react";
 import Image from "next/image";
 import { MdOutlineWorkspacePremium } from "react-icons/md";
-import { Button } from "./Button";
-import { Heading } from "./Heading";
-import { LinkComponent as Link } from "./Link";
-import { Overlay } from "./Overlay";
-import { Paragraph } from "./Paragraph";
+import { Overlay } from "../Overlay";
+import { Heading } from "../Heading";
+import { Paragraph } from "../Paragraph";
+import { LinkComponent as Link } from "../Link";
+import { Button } from "../Button";
 
-type PremiumCardModalTypes = {
-  onClose: () => void;
+type PremiumCardModalProps = {
   onProceed: () => void;
+  onClose: () => void;
 };
 
 export const PremiumCardModal = ({
-  onClose,
   onProceed,
-}: PremiumCardModalTypes) => {
+  onClose,
+}: PremiumCardModalProps) => {
   return (
     <Overlay>
       <div

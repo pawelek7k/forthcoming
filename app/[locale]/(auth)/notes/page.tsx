@@ -1,5 +1,5 @@
-import { ParticlesBackground } from "@/app/components/ParticlesBackground";
-import { PremiumCardModal } from "@/app/components/PremiumCard";
+import { ParticlesBackground } from "@/app/components/Notes/ParticlesBackground";
+import { SubscriptionFlow } from "@/app/components/Notes/SubscriptionFlow";
 import { Section } from "@/app/components/Section";
 import { TiLockClosed } from "react-icons/ti";
 
@@ -15,7 +15,7 @@ const NotesPage = () => {
       <div className="bg-zinc-900 w-44 h-60 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center rounded-md shadow-lg">
         <TiLockClosed className="w-12 h-12 shadow-lg animate-colorShift" />
       </div>
-      <PremiumCardModal />
+      <SubscriptionFlow />
     </Section>
   );
 };
