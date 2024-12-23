@@ -41,14 +41,22 @@ export const PremiumCardModal = ({
           height={300}
           alt="premium img"
         />
-        <div className="flex gap-4">
-          <Button
-            danger={true}
-            onClick={onClose}
-            namespace="premium.cancelBtn"
-          />
-          <Button onClick={onProceed} namespace="premium.premiumBtn" />
-        </div>
+        <ul className="flex gap-4 flex-col">
+          <li>
+            <Button
+              onClick={onProceed}
+              namespace="premium.premiumBtn"
+              primary={true}
+            />
+          </li>
+          <li>
+            <Button
+              danger={true}
+              onClick={onClose}
+              namespace="premium.cancelBtn"
+            />
+          </li>
+        </ul>
       </div>
     </Overlay>
   );

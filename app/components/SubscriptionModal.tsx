@@ -35,12 +35,18 @@ export const SubscriptionModal = ({
             19.99 PLN/mies.
           </span>
         </div>
-        <Button onClick={onSubscribe} primary={true}>
-          Subskrybuj teraz
-        </Button>
-        <Button danger={true} onClick={onClose}>
-          Anuluj
-        </Button>
+        <ul className="flex flex-col">
+          <li>
+            <Button onClick={onSubscribe} primary={true}>
+              Subskrybuj teraz
+            </Button>
+          </li>
+          <li>
+            <Button danger={true} onClick={onClose}>
+              Anuluj
+            </Button>
+          </li>
+        </ul>
       </motion.div>
     </Overlay>
   );
