@@ -45,9 +45,9 @@ export const PremiumCardModal = ({
           <Button
             danger={true}
             onClick={onClose}
-            namespace="premium.button.cancel"
+            namespace="premium.cancelBtn"
           />
-          <Button onClick={onProceed} namespace="premium.button.proceed" />
+          <Button onClick={onProceed} namespace="premium.premiumBtn" />
         </div>
       </div>
     </Overlay>

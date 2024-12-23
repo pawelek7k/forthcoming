@@ -64,7 +64,8 @@
   "premium": {
     "heading": "Buy premium to save your golden thoughts.",
     "paragraph": "You cannot access this page without a subscription.",
-    "button": "Buy premium",
+    "premiumBtn": "Buy premium",
+    "cancelBtn": "Cancel",
     "link": "Learn more"
   },
   "footer": {

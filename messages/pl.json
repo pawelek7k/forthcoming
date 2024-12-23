@@ -64,7 +64,8 @@
   "premium": {
     "heading": "Kup premium, by zapisywać swoje złote myśli.",
     "paragraph": "Nie możesz otworzyć tej strony bez subskrypcji.",
-    "button": "Kup premium",
+    "premiumBtn": "Kup premium",
+    "cancelBtn": "Anuluj",
     "link": "Dowiedz się więcej"
   },
   "footer": {
