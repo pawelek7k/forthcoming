@@ -19,7 +19,7 @@ export const SubscriptionModal = ({
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}
-        className="bg-white rounded-lg shadow-lg p-6 max-w-md w-full text-zinc-900"
+        className="bg-zinc-100 rounded-lg shadow-lg p-6 max-w-md w-full text-zinc-900"
       >
         <ul className="flex flex-col gap-4">
           <li>
