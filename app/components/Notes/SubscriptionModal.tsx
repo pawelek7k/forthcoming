@@ -1,8 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
+import { FcApproval } from "react-icons/fc";
 import { Button } from "../Button";
 import { Heading } from "../Heading";
 import { Overlay } from "../Overlay";
+import { Paragraph } from "../Paragraph";
 
 type SubscriptionModalProps = {
   onSubscribe: () => void;
@@ -13,6 +15,8 @@ export const SubscriptionModal = ({
   onSubscribe,
   onClose,
 }: SubscriptionModalProps) => {
+  const features: string[] = ["AI suggestions", "Notes", "Priority support"];
+
   return (
     <Overlay>
       <motion.div
@@ -23,8 +27,18 @@ export const SubscriptionModal = ({
       >
         <div className="w-full bg-zinc-900 text-zinc-100 h-1/2 rounded-md p-6">
           <Heading as="h2" namespace="premium.purchaseHeading" />
+          <Paragraph namespace="premium.purchaseParagraph" />
+          <ul className="flex items-center justify-center gap-4">
+            {features.map((feature, index) => (
+              <li key={index} className="flex items-center gap-1">
+                <FcApproval />
+                {feature}
+              </li>
+            ))}
+          </ul>
         </div>
         <div>
+          <p>You'll pay.</p>
           <ul className="flex flex-col gap-4 p-6">
             <li>
               <Button onClick={onSubscribe} success={true}>
