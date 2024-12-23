@@ -5,6 +5,7 @@ import { Button } from "../Button";
 import { Heading } from "../Heading";
 import { Overlay } from "../Overlay";
 import { Paragraph } from "../Paragraph";
+import { CardDetailsForm } from "./CardDetailsForm";
 
 type SubscriptionModalProps = {
   onSubscribe: () => void;
@@ -23,7 +24,7 @@ export const SubscriptionModal = ({
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}
-        className="bg-zinc-100 rounded-lg shadow-lg max-w-md w-full flex gap-4 flex-col text-zinc-950 relative h-80"
+        className="bg-zinc-100 rounded-lg shadow-lg max-w-md w-full flex gap-4 flex-col text-zinc-950 relative"
       >
         <div className="w-full bg-zinc-900 text-zinc-100 h-1/2 rounded-md p-6">
           <Heading as="h2" namespace="premium.purchaseHeading" />
@@ -37,12 +38,22 @@ export const SubscriptionModal = ({
             ))}
           </ul>
         </div>
-        <div>
+        <div className="">
           <p>You'll pay.</p>
-          <ul className="flex flex-col gap-4 p-6">
+          <div className=" border border-b-zinc-300 m-6">
+            <Heading as="h3">
+              <span>$9</span>.99 <span> /month </span>
+            </Heading>
+            <div>Monthly subsciption</div>
+          </div>
+          <div className="p-6 pt-0">
+            <p>Card details</p>
+            <CardDetailsForm />
+          </div>
+          <ul className="flex flex-col md:flex-row-reverse justify-start gap-4 p-6">
             <li>
               <Button onClick={onSubscribe} success={true}>
-                Subskrybuj teraz
+                Pay now
               </Button>
             </li>
             <li>
