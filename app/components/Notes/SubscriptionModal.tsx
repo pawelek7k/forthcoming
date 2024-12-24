@@ -46,7 +46,7 @@ export const SubscriptionModal = ({
             ))}
           </ul>
         </div>
-        <div className="bg-zinc-100 absolute -bottom-0 rounded-xl left-1/2 -translate-x-1/2 w-[450px] p-4 flex flex-col gap-2 md:gap-4 bg-premium-card-gradient">
+        <div className="bg-zinc-100 absolute -bottom-0 rounded-xl left-1/2 -translate-x-1/2 sm:w-[450px] p-4 flex flex-col gap-2 md:gap-4 bg-premium-card-gradient w-full">
           <p className="text-xs font-semibold">You'll pay,</p>
           <div className="border-b border-b-zinc-300 flex justify-between p-2 items-center pt-0">
             <Heading as="h3" className="font-semibold">
