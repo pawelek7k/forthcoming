@@ -46,7 +46,7 @@ export const SubscriptionModal = ({
             ))}
           </ul>
         </div>
-        <div className="bg-zinc-100 absolute -bottom-0 rounded-xl left-1/2 -translate-x-1/2 w-[450px] p-4 flex flex-col gap-2 sm:gap-4 bg-premium-card-gradient">
+        <div className="bg-zinc-100 absolute -bottom-0 rounded-xl left-1/2 -translate-x-1/2 w-[450px] p-4 flex flex-col gap-2 md:gap-4 bg-premium-card-gradient">
           <p className="text-xs font-semibold">You'll pay,</p>
           <div className="border-b border-b-zinc-300 flex justify-between p-2 items-center pt-0">
             <Heading as="h3" className="font-semibold">
@@ -59,7 +59,7 @@ export const SubscriptionModal = ({
             <p className="text-xs font-semibold mb-2">Card details</p>
             <CardDetailsForm />
           </div>
-          <ul className="flex flex-col md:flex-row-reverse justify-start gap-2 sm:gap-4">
+          <ul className="flex flex-col md:flex-row-reverse justify-start gap-2 md:gap-4">
             <li>
               <Button onClick={onSubscribe} success={true} className="text-xs">
                 Pay now
