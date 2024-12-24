@@ -34,7 +34,7 @@ export const SubscriptionModal = ({
           />
           <Paragraph
             namespace="premium.purchaseParagraph"
-            className="text-xs text-zinc-400 text-lg"
+            className="text-xs text-zinc-400"
           />
           <ul className="flex items-center justify-center gap-4">
             {features.map((feature, index) => (
@@ -47,20 +47,22 @@ export const SubscriptionModal = ({
         </div>
         <div className="bg-zinc-100 absolute -bottom-0 rounded-xl left-1/2 -translate-x-1/2 w-[450px] p-4 flex flex-col gap-4">
           <p className="text-xs font-semibold">You'll pay,</p>
-          <div className="border-b border-b-zinc-300 flex justify-between p-2 items-center">
+          <div className="border-b border-b-zinc-300 flex justify-between p-2 items-center pt-0">
             <Heading as="h3" className="font-semibold">
               <span className="text-3xl">$9</span>.99{" "}
               <span className="text-zinc-400 text-xs"> /month </span>
             </Heading>
-            <div>Monthly subsciption</div>
+            <div className="border rounded-full border-zinc-400 px-2 py-1">
+              <p className="text-xs">Monthly subsciption</p>
+            </div>
           </div>
           <div className="">
-            <p>Card details</p>
+            <p className="text-xs font-semibold mb-2">Card details</p>
             <CardDetailsForm />
           </div>
           <ul className="flex flex-col md:flex-row-reverse justify-start gap-4">
             <li>
-              <Button onClick={onSubscribe} success={true}>
+              <Button onClick={onSubscribe} success={true} className="text-xs">
                 Pay now
               </Button>
             </li>
@@ -69,6 +71,7 @@ export const SubscriptionModal = ({
                 danger={true}
                 onClick={onClose}
                 namespace="premium.cancelBtn"
+                className="text-xs"
               />
             </li>
           </ul>
