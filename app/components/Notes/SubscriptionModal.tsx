@@ -26,7 +26,7 @@ export const SubscriptionModal = ({
         exit={{ scale: 0.8, opacity: 0 }}
         className="bg-zinc-100 rounded-2xl shadow-lg w-[500px] text-zinc-950 relative h-96"
       >
-        <div className=" bg-zinc-900 text-zinc-100 rounded-xl p-12 h-64 w-[500px]">
+        <div className=" bg-zinc-900 text-zinc-100 rounded-xl p-6 h-64 w-[500px]">
           <Heading as="h2" namespace="premium.purchaseHeading" />
           <Paragraph namespace="premium.purchaseParagraph" />
           <ul className="flex items-center justify-center gap-4">
