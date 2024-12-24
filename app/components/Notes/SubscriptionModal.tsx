@@ -38,19 +38,19 @@ export const SubscriptionModal = ({
             ))}
           </ul>
         </div>
-        <div className="bg-zinc-100 absolute -bottom-32 rounded-xl left-1/2 -translate-x-1/2 p-6 w-[450px]">
+        <div className="bg-zinc-100 absolute -bottom-0 rounded-xl left-1/2 -translate-x-1/2 w-[450px] p-4 flex flex-col gap-4">
           <p>You'll pay.</p>
-          <div className=" border border-b-zinc-300 m-6">
+          <div className="border border-b-zinc-300 flex justify-between">
             <Heading as="h3">
               <span>$9</span>.99 <span> /month </span>
             </Heading>
             <div>Monthly subsciption</div>
           </div>
-          <div className="p-6 pt-0">
+          <div className="">
             <p>Card details</p>
             <CardDetailsForm />
           </div>
-          <ul className="flex flex-col md:flex-row-reverse justify-start gap-4 p-6">
+          <ul className="flex flex-col md:flex-row-reverse justify-start gap-4">
             <li>
               <Button onClick={onSubscribe} success={true}>
                 Pay now
