@@ -25,9 +25,9 @@ export const SubscriptionModal = ({
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}
-        className="bg-zinc-100 rounded-2xl shadow-lg w-[500px] text-zinc-950 relative h-96"
+        className="bg-zinc-100 rounded-2xl shadow-lg w-full sm:w-[500px] text-zinc-950 relative h-96"
       >
-        <div className="bg-gradient-to-t from-sky-950 to-zinc-950 text-zinc-100 rounded-xl p-6 h-64 w-[500px] flex flex-col gap-2">
+        <div className="bg-gradient-to-t from-sky-950 to-zinc-950 text-zinc-100 rounded-xl p-6 h-64 w-full sm:w-[500px] flex flex-col gap-2">
           <Heading
             as="h2"
             namespace="premium.purchaseHeading"
@@ -46,7 +46,7 @@ export const SubscriptionModal = ({
             ))}
           </ul>
         </div>
-        <div className="bg-zinc-100 absolute -bottom-0 rounded-xl left-1/2 -translate-x-1/2 w-[450px] p-4 flex flex-col gap-4 bg-premium-card-gradient">
+        <div className="bg-zinc-100 absolute -bottom-0 rounded-xl left-1/2 -translate-x-1/2 w-[450px] p-4 flex flex-col gap-2 sm:gap-4 bg-premium-card-gradient">
           <p className="text-xs font-semibold">You'll pay,</p>
           <div className="border-b border-b-zinc-300 flex justify-between p-2 items-center pt-0">
             <Heading as="h3" className="font-semibold">
@@ -59,7 +59,7 @@ export const SubscriptionModal = ({
             <p className="text-xs font-semibold mb-2">Card details</p>
             <CardDetailsForm />
           </div>
-          <ul className="flex flex-col md:flex-row-reverse justify-start gap-4">
+          <ul className="flex flex-col md:flex-row-reverse justify-start gap-2 sm:gap-4">
             <li>
               <Button onClick={onSubscribe} success={true} className="text-xs">
                 Pay now
