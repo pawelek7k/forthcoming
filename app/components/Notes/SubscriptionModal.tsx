@@ -46,7 +46,7 @@ export const SubscriptionModal = ({
           </ul>
         </div>
         <div className="bg-zinc-100 absolute -bottom-0 rounded-xl left-1/2 -translate-x-1/2 w-[450px] p-4 flex flex-col gap-4">
-          <p>You'll pay.</p>
+          <p className="text-xs font-semibold">You'll pay,</p>
           <div className="border border-b-zinc-300 flex justify-between">
             <Heading as="h3">
               <span>$9</span>.99 <span> /month </span>
