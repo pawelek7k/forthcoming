@@ -18,7 +18,7 @@ export const CardDetailsForm = () => {
             key={id}
             type="text"
             id={id}
-            className="block w-full p-2 bg-zinc-50 outline-none placeholder:text-sm"
+            className="block w-full p-2 bg-zinc-50 outline-none placeholder:text-xs"
             placeholder={placeholder}
           />
         ))}
