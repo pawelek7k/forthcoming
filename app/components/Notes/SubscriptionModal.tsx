@@ -24,9 +24,9 @@ export const SubscriptionModal = ({
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}
-        className="bg-zinc-100 rounded-lg shadow-lg max-w-md w-full  text-zinc-950 relative h-80"
+        className="bg-zinc-100 rounded-2xl shadow-lg w-[500px] text-zinc-950 relative h-96"
       >
-        <div className="w-full bg-zinc-900 text-zinc-100 rounded-md p-6 h-48">
+        <div className=" bg-zinc-900 text-zinc-100 rounded-xl p-12 h-56 w-[500px]">
           <Heading as="h2" namespace="premium.purchaseHeading" />
           <Paragraph namespace="premium.purchaseParagraph" />
           <ul className="flex items-center justify-center gap-4">
@@ -38,7 +38,7 @@ export const SubscriptionModal = ({
             ))}
           </ul>
         </div>
-        <div className="bg-zinc-50 absolute -bottom-28 w-96 left-1/2 -translate-x-1/2">
+        <div className="bg-zinc-100 absolute -bottom-32 rounded-xl left-1/2 -translate-x-1/2 p-6 w-[450px]">
           <p>You'll pay.</p>
           <div className=" border border-b-zinc-300 m-6">
             <Heading as="h3">
