@@ -37,7 +37,7 @@ export const SubscriptionModal = ({
             namespace="premium.purchaseParagraph"
             className="text-xs text-zinc-400"
           />
-          <ul className="flex items-center justify-center gap-2 sm:gap-4 flex-col sm:flex-row">
+          <ul className="flex items-center justify-center gap-2 sm:gap-4 flex-col sm:flex-row tracking-wider">
             {features.map((feature, index) => (
               <li key={index} className="flex items-center gap-1 text-sm">
                 <FcApproval />
