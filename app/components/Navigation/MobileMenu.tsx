@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import Hamburger from "hamburger-react";
+import { Button } from "../Button";
 import { LinkComponent as Link } from "../Link";
 import { Logo } from "../Logo";
 import { MenuProps } from "./DesktopMenu";
@@ -44,6 +45,9 @@ export const MobileMenu = ({ isOpen, setIsOpen, links }: MenuProps) => {
                   ))}
                 </ul>
               </nav>
+              <div className="mt-6">
+                <Button primary={true}>Display filters</Button>
+              </div>
               <div className="self-center mt-auto">
                 <Logo />
               </div>
