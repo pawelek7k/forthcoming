@@ -15,7 +15,7 @@ export const Filter = () => {
       <div>
         <Heading
           as="h2"
-          className="text-2xl font-semibold text-zinc-100 mb-4"
+          className="text-base md:text-2xl font-semibold text-zinc-100 mb-4"
           namespace="filters.heading"
         />
         <FilterInputs />
