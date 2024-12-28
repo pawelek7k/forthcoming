@@ -21,7 +21,7 @@ export const InputField = ({
     <div>
       <label
         htmlFor={id}
-        className="block text-neutral-100 text-sm font-semibold mb-2 uppercase"
+        className="block text-xs md:text-sm text-zinc-100 font-semibold mb-2 uppercase"
       >
         {label}
       </label>
