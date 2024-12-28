@@ -50,7 +50,11 @@ export const FilterInputs = () => {
         <FilterLanguageToggle />
         <FilterAdultToggle />
       </div>
-      <Button onClick={clearFilters} primary={true}>
+      <Button
+        onClick={clearFilters}
+        primary={true}
+        className="text-xs md:text-sm text-zinc-100"
+      >
         {t("clearFilters")}
       </Button>
     </div>
