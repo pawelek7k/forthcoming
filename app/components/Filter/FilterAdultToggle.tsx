@@ -11,17 +11,21 @@ export const FilterAdultToggle = () => {
 
   return (
     <div className="flex items-center justify-between mb-4">
-      <p className="text-neutral-100 text-sm font-semibold uppercase">
+      <p className="text-xs md:text-sm text-zinc-100 font-semibold uppercase">
         {t("adultChecker")}
       </p>
       <div className="flex items-center gap-2">
-        <span className="text-sm uppercase">{t("no")}</span>
+        <span className="text-xs md:text-sm text-zinc-100 uppercase">
+          {t("no")}
+        </span>
         <ToggleSwitch
           name="forAdultToggle"
           value={forAdult ? "on" : "off"}
           onChange={() => dispatch(toggleForAdult())}
         />
-        <span className="text-sm uppercase">{t("yes")}</span>
+        <span className="text-xs md:text-sm text-zinc-100 uppercase">
+          {t("yes")}
+        </span>
       </div>
     </div>
   );
