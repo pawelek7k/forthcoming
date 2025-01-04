@@ -27,7 +27,7 @@ export const SubscriptionModal = ({
         exit={{ scale: 0.8, opacity: 0 }}
         className="bg-zinc-100 rounded-2xl shadow-lg w-full sm:w-[500px] text-zinc-950 relative h-96"
       >
-        <div className="bg-gradient-to-t from-sky-950 to-zinc-950 text-zinc-100 rounded-xl p-6 h-64 w-full sm:w-[500px] flex flex-col gap-2">
+        <div className="bg-gradient-to-t from-sky-950 to-zinc-950 text-zinc-100 rounded-xl p-6 h-64 w-full sm:w-[500px] flex flex-col gap-2npm">
           <Heading
             as="h2"
             namespace="premium.purchaseHeading"
@@ -47,7 +47,7 @@ export const SubscriptionModal = ({
           </ul>
         </div>
         <div className="bg-zinc-100 absolute -bottom-12 sm:bottom-0 rounded-xl left-1/2 -translate-x-1/2 sm:w-[450px] p-4 flex flex-col gap-2 md:gap-4 bg-premium-card-gradient w-full">
-          <p className="text-xs font-semibold">You'll pay,</p>
+          <p className="text-xs font-semibold">{"You'll pay,"}</p>
           <div className="border-b border-b-zinc-300 flex justify-between p-2 items-center pt-0">
             <Heading as="h3" className="font-semibold">
               <span className="text-3xl">$9</span>.99{" "}
