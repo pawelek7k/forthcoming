@@ -1,4 +1,3 @@
-import { Socials } from "@/app/components/Socials";
 import { useTranslations } from "next-intl";
 import React from "react";
 import { Button } from "../Button";
@@ -63,7 +62,6 @@ export const LoginForm = ({
           </li>
         </ul>
       </form>
-      <Socials />
     </div>
   );
 };
