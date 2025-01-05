@@ -1,9 +1,9 @@
+import { Socials } from "@/app/components/Socials";
 import { useTranslations } from "next-intl";
 import React from "react";
 import { Button } from "../Button";
-import { InputField } from "../InputField";
-import { Socials } from "@/app/components/Login/Socials";
 import { GoogleBtn } from "../GoogleBtn";
+import { InputField } from "../InputField";
 
 type LoginFormType = {
   formData: {

@@ -1,6 +1,6 @@
 import { Heading } from "@/app/components/Heading";
-import { Socials } from "@/app/components/Login/Socials";
 import { Section } from "@/app/components/Section";
+import { Socials } from "@/app/components/Socials";
 import { getBookDetails } from "@/lib/mongoDB/getDetails";
 import Image from "next/legacy/image";
 

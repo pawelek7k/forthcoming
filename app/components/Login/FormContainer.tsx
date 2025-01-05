@@ -1,5 +1,5 @@
-import { LoginForm } from "./Login";
-import { SignupForm } from "./Signup";
+import { LoginForm } from "@/app/components/Login/Login";
+import { SignupForm } from "@/app/components/Login/Signup";
 
 type FormContainerTypes = {
   isLogin: boolean;
