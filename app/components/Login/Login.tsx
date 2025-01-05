@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import React from "react";
 import { Button } from "../Button";
 import { InputField } from "../InputField";
-import { Socials } from "./Socials";
+import { Socials } from "@/app/components/Login/Socials";
 import { GoogleBtn } from "../GoogleBtn";
 
 type LoginFormType = {
