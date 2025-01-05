@@ -1,8 +1,8 @@
 "use client";
 
+import { FormContainer } from "@/app/components/Auth/FormContainer";
+import { ToggleFormButton } from "@/app/components/Auth/ToggleFormButton";
 import { Loader } from "@/app/components/Loader";
-import { FormContainer } from "@/app/components/Login/FormContainer";
-import { ToggleFormButton } from "@/app/components/Login/ToggleFormButton";
 import { Section } from "@/app/components/Section";
 import { createUser } from "@/lib/signup/createUser";
 import { useRouter } from "@/navigation";

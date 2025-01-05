@@ -1,5 +1,5 @@
+import { Login } from "@/app/components/Auth";
 import { Footer } from "@/app/components/Footer";
-import { Login } from "@/app/components/Login";
 
 export const metadata = {
   title: "Forthcoming - Login Page",
