@@ -1,14 +1,11 @@
+import { formDataTypes } from "@/types/formData";
 import { useTranslations } from "next-intl";
 import React from "react";
 import { Button } from "../Button";
 import { InputField } from "../InputField";
 
 type SignupFormType = {
-  formData: {
-    email: string;
-    username: string;
-    password: string;
-  };
+  formData: formDataTypes;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   submitHandler: (e: React.FormEvent<HTMLFormElement>) => void;
   isLoading: boolean;
