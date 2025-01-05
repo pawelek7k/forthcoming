@@ -1,5 +1,6 @@
 import { Heading } from "@/app/components/Heading";
 import { Section } from "@/app/components/Section";
+import { Socials } from "@/app/components/Socials";
 import { getBookDetails } from "@/lib/mongoDB/getDetails";
 import Image from "next/legacy/image";
 
@@ -56,6 +57,7 @@ const DetailsDynamicPage = async ({ params }: DetailsType) => {
           </div>
         </div>
       </div>
+      <Socials />
       <div className="flex md:gap-20 flex-col md:flex-row">
         {book.content && (
           <div>

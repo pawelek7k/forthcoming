@@ -4,6 +4,7 @@ import React from "react";
 import { Button } from "../Button";
 import { GoogleBtn } from "../GoogleBtn";
 import { InputField } from "../InputField";
+import { Socials } from "../Socials";
 
 type LoginFormType = {
   formData: formDataTypes;
@@ -59,6 +60,7 @@ export const LoginForm = ({
           </li>
         </ul>
       </form>
+      <Socials />
     </div>
   );
 };
