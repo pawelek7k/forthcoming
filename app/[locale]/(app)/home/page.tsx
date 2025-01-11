@@ -1,8 +1,8 @@
 import { HomeRenderContent } from "@/app/components/HomeRenderContent";
 
 export const metadata = {
-  title: "Future - Home",
-  description: "Future",
+  title: "Forthcoming - Home",
+  description: "Forthcoming",
 };
 
 const HomePage = () => {
