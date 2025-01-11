@@ -3,8 +3,8 @@ import { Heading } from "@/app/components/Heading";
 import { Section } from "@/app/components/Section";
 
 export const metadata = {
-  title: "Future - Create your book",
-  description: "Future",
+  title: "Forthcoming - Create your book",
+  description: "Forthcoming",
 };
 
 const CreatePage = () => {
