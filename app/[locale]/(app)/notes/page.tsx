@@ -4,8 +4,8 @@ import { Section } from "@/app/components/Section";
 import { TiLockClosed } from "react-icons/ti";
 
 export const metadata = {
-  title: "Future - Write your ideas!",
-  description: "Future",
+  title: "Forthcoming - Write your ideas!",
+  description: "Forthcoming",
 };
 
 const NotesPage = () => {
