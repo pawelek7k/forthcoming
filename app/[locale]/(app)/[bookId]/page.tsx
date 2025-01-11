@@ -42,16 +42,16 @@ const DetailsDynamicPage = async ({ params }: DetailsType) => {
             <p className="text-sm sm:text-base">{book.description}</p>
             <div className="flex gap-10">
               <div className="flex gap-2">
-                <Heading as="h3">For Adult:</Heading>{" "}
+                <Heading as="h3" namespace="global.adultChecker" />
                 {book.forAdult ? "Yes" : "No"}
               </div>
               <div className="flex gap-2">
-                <Heading as="h3">Language of the book:</Heading>{" "}
+                <Heading as="h3" namespace="global.langSwitch" />
                 {book.lang ? "PL" : "ENG"}
               </div>
             </div>
             <div className="flex gap-2">
-              <Heading as="h3">Genre: </Heading>
+              <Heading as="h3" namespace="global.genre" />
               {book.genre}
             </div>
           </div>
