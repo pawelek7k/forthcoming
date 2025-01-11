@@ -5,7 +5,7 @@ import { getBookDetails } from "@/lib/mongoDB/getDetails";
 import Image from "next/legacy/image";
 
 export const metadata = {
-  title: "Future - The book you like",
+  title: "Forthcoming - The book you like",
   description: "Read the books you like with your favorite wine and music.",
 };
 
