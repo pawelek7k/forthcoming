@@ -7,8 +7,8 @@ import { redirect } from "@/navigation";
 import { Suspense } from "react";
 
 export const metadata = {
-  title: "Future - Your Library",
-  description: "Future",
+  title: "Forthcoming - Your Library",
+  description: "Forthcoming",
 };
 
 const LibraryPage = async () => {
