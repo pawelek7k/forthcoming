@@ -50,7 +50,7 @@ export const BookItem = ({
             {book.title}
           </Heading>
           <div className="flex gap-2 font-semibold items-center rounded-full bg-zinc-100 text-zinc-950 md:px-4 w-max text-sm md:text-base px-2">
-            <Heading as="h4">For adult:</Heading>
+            <Heading as="h4" namespace="global.adultChecker" />
             <span className="text-sm">{book.forAdult ? "YES" : "NO"}</span>
           </div>
           <Paragraph>{book.description}</Paragraph>
