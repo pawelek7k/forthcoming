@@ -1,8 +1,8 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import localFont from "next/font/local";
-import { NextAuthProvider } from "../(auth)/NextAuthProvider";
 import "../../globals.css";
+import { NextAuthProvider } from "../NextAuthProvider";
 
 const geistSans = localFont({
   src: "../../fonts/GeistVF.woff",
