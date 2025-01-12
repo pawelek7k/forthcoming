@@ -56,14 +56,17 @@ export const SubscriptionModal = ({
             <Tag>Monthly subsciption</Tag>
           </div>
           <div className="">
-            <p className="text-xs font-semibold mb-2">Card details</p>
+            <Paragraph namespace="premium.cardDetails" />
             <CardDetailsForm />
           </div>
           <ul className="flex flex-col md:flex-row-reverse justify-start gap-2 md:gap-4">
             <li>
-              <Button onClick={onSubscribe} success={true} className="text-xs">
-                Pay now
-              </Button>
+              <Button
+                onClick={onSubscribe}
+                success={true}
+                className="text-xs"
+                namespace="premium.payNow"
+              />
             </li>
             <li>
               <Button
