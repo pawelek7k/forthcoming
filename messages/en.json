@@ -68,7 +68,11 @@
     "cancelBtn": "Cancel",
     "link": "Learn more",
     "purchaseHeading": "Do more with Premium.",
-    "purchaseParagraph": "Subscribe today to become a star creator and enjoy exclusive access to our premium benefits and features"
+    "purchaseParagraph": "Subscribe today to become a star creator and enjoy exclusive access to our premium benefits and features",
+    "monthlySubsciption": "Monthly subsciption",
+    "cardDetails": "Card details",
+    "payNow": "Pay now",
+    "forMonth": "month"
   },
   "footer": {
     "copyright": "© 2024 Forthcoming. All rights reserved."
