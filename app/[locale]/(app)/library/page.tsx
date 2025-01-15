@@ -1,15 +1,16 @@
 import { Heading } from "@/app/components/Heading";
-import { Loader } from "@/app/components/Loader";
 import { RenderBooks } from "@/app/components/RenderBooks";
 import { Section } from "@/app/components/Section";
-import { getUserLibrary } from "@/lib/mongoDB/getUserLibrary";
+import { getUserLibrary as fetchUserLibrary } from "@/lib/mongoDB/getUserLibrary";
 import { redirect } from "@/navigation";
-import { Suspense } from "react";
+import { cache } from "react";
 
 export const metadata = {
   title: "Forthcoming - Your Library",
   description: "Forthcoming",
 };
+
+const getUserLibrary = cache(fetchUserLibrary);
 
 const LibraryPage = async () => {
   const { books, userLibrary } = await getUserLibrary();
@@ -26,9 +27,7 @@ const LibraryPage = async () => {
         namespace="headings.library"
         className="text-xl sm:text-3xl text-neutral-100 uppercase font-semibold"
       />
-      <Suspense fallback={<Loader />}>
-        <RenderBooks books={books} userLibrary={userLibrary} />
-      </Suspense>
+      <RenderBooks books={books} userLibrary={userLibrary} />
     </Section>
   );
 };
