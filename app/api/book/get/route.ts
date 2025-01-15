@@ -21,7 +21,12 @@ export async function GET() {
     } catch (err) {
         return NextResponse.json(
             { error: `Failed to fetch books ${err}` },
-            { status: 500 }
+            {
+                status: 500,
+                headers: {
+                    "Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
+                },
+            }
         );
     }
 }
